@@ -1,0 +1,72 @@
+{
+  "name": "next-app",
+  "version": "1.0.0",
+  "license": "MIT",
+  "description": "Boilerplate for React Application",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/breadhead/next-app.git"
+  },
+  "keywords": [
+    "next",
+    "react",
+    "ssr",
+    "typescript"
+  ],
+  "bugs": {
+    "url": "https://github.com/breadhead/next-app/issues"
+  },
+  "homepage": "https://github.com/breadhead/next-apps#readme",
+  "author": "Igor Kamyshev <igor@breadhead.ru>",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "lint:code": "tslint -p tsconfig.json -c tslint.json",
+    "lint:style": "stylelint './**/*.css'",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@zeit/next-css": "^1.0.1",
+    "@zeit/next-typescript": "^1.1.1",
+    "classnames": "^2.2.6",
+    "next": "^7.0.1",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-redux": "^5.0.1",
+    "redux": "^3.6.0",
+    "redux-devtools-extension": "^2.13.2",
+    "redux-symbiote": "^2.6.0",
+    "redux-thunk": "^2.1.0",
+    "reselect": "^4.0.0"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-typescript": "^7.1.0",
+    "@types/classnames": "^2.2.6",
+    "@types/enzyme": "^3.1.14",
+    "@types/jest": "^23.3.4",
+    "@types/next": "^7.0.1",
+    "@types/react": "^16.4.16",
+    "@types/react-redux": "^6.0.9",
+    "@types/redux-thunk": "^2.1.0",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
+    "babel-plugin-module-resolver": "^3.1.1",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.6.0",
+    "enzyme-to-json": "^3.3.4",
+    "jest": "^23.6.0",
+    "jest-enzyme": "^7.0.0",
+    "postcss": "^7.0.5",
+    "postcss-nesting": "^7.0.0",
+    "postcss-normalize": "^7.0.1",
+    "postcss-preset-env": "^6.0.10",
+    "stylelint": "^9.6.0",
+    "stylelint-config-recommended": "^2.1.0",
+    "tslint": "^5.11.0",
+    "tslint-eslint-rules": "^5.4.0",
+    "typescript": "^3.1.1"
+  }
+}

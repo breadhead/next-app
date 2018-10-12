@@ -1,0 +1,30 @@
+{
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": ["./"],
+        "alias": {
+          "@app": "./"
+        }
+      }
+    ]
+  ],
+  "env": {
+    "development": {
+      "presets": [
+        "next/babel",
+        "@zeit/next-typescript/babel"
+      ]
+    },
+    "production": {
+      "presets": [
+        "next/babel",
+        "@zeit/next-typescript/babel"
+      ]
+    },
+    "test": {
+      "presets": ["@babel/preset-env", "@babel/preset-react", "@babel/preset-typescript"]
+    }
+  }
+}
