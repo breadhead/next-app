@@ -820,9 +820,9 @@
   version "23.3.4"
   resolved "https://registry.yarnpkg.com/@types/jest/-/jest-23.3.4.tgz#cc43ae176a91dcb1504839b0b9d6659386cf0af5"
 
-"@types/next@^7.0.1":
-  version "7.0.1"
-  resolved "https://registry.yarnpkg.com/@types/next/-/next-7.0.1.tgz#c05ac38cce3312fe178bcd43cad8b2a4c61c4cda"
+"@types/next@^7.0.2":
+  version "7.0.2"
+  resolved "https://registry.yarnpkg.com/@types/next/-/next-7.0.2.tgz#e8ab0c9a7b8865dc56f1d06f60e16b3630f4fa28"
   dependencies:
     "@types/node" "*"
     "@types/node-fetch" "*"
