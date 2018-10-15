@@ -34,7 +34,7 @@
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-redux": "^5.0.1",
-    "redux": "^3.6.0",
+    "redux": "^4.0.1",
     "redux-devtools-extension": "^2.13.2",
     "redux-symbiote": "^2.6.0",
     "redux-thunk": "^2.1.0",
