@@ -820,14 +820,22 @@
   version "23.3.5"
   resolved "https://registry.yarnpkg.com/@types/jest/-/jest-23.3.5.tgz#870a1434208b60603745bfd214fc3fc675142364"
 
-"@types/next@^7.0.2":
-  version "7.0.2"
-  resolved "https://registry.yarnpkg.com/@types/next/-/next-7.0.2.tgz#e8ab0c9a7b8865dc56f1d06f60e16b3630f4fa28"
+"@types/next-server@*":
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/@types/next-server/-/next-server-7.0.0.tgz#dca2c7445b572573609475db17bc8ee4b7ab4b03"
   dependencies:
+    "@types/node" "*"
+    "@types/react" "*"
+    "@types/react-loadable" "*"
+
+"@types/next@^7.0.3":
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/@types/next/-/next-7.0.3.tgz#4831741dee02c463a761292176e372af072d3c39"
+  dependencies:
+    "@types/next-server" "*"
     "@types/node" "*"
     "@types/node-fetch" "*"
     "@types/react" "*"
-    "@types/react-loadable" "*"
 
 "@types/node-fetch@*":
   version "2.1.2"
