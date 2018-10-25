@@ -33,7 +33,7 @@
     "next": "^7.0.2",
     "react-dom": "^16.6.0",
     "react": "^16.6.0",
-    "react-redux": "^5.0.1",
+    "react-redux": "^5.1.0",
     "redux": "^4.0.1",
     "redux-devtools-extension": "^2.13.2",
     "redux-symbiote": "^2.6.0",
