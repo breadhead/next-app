@@ -58,7 +58,7 @@
     "enzyme-adapter-react-16": "^1.6.0",
     "enzyme-to-json": "^3.3.4",
     "jest": "^23.6.0",
-    "jest-enzyme": "^7.0.0",
+    "jest-enzyme": "^7.0.1",
     "postcss": "^7.0.5",
     "postcss-nesting": "^7.0.0",
     "postcss-normalize": "^7.0.1",
