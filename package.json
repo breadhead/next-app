@@ -48,7 +48,7 @@
     "@types/enzyme": "^3.1.15",
     "@types/jest": "^23.3.9",
     "@types/next": "^7.0.4",
-    "@types/react": "^16.7.3",
+    "@types/react": "^16.7.4",
     "@types/react-redux": "^6.0.9",
     "@types/redux-thunk": "^2.1.0",
     "babel-core": "7.0.0-bridge.0",
