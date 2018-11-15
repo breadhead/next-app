@@ -41,14 +41,14 @@
     "reselect": "^4.0.0"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.1.5",
+    "@babel/preset-env": "^7.1.6",
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "^7.1.0",
     "@types/classnames": "^2.2.6",
     "@types/enzyme": "^3.1.15",
     "@types/jest": "^23.3.9",
-    "@types/next": "^7.0.4",
     "@types/react": "^16.7.6",
+    "@types/next": "^7.0.5",
     "@types/react-redux": "^6.0.9",
     "@types/redux-thunk": "^2.1.0",
     "babel-core": "7.0.0-bridge.0",
