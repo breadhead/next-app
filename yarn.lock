@@ -6296,9 +6296,9 @@ redux-devtools-extension@^2.13.2:
   version "2.13.5"
   resolved "https://registry.yarnpkg.com/redux-devtools-extension/-/redux-devtools-extension-2.13.5.tgz#3ff34f7227acfeef3964194f5f7fc2765e5c5a39"
 
-redux-symbiote@^2.6.0:
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/redux-symbiote/-/redux-symbiote-2.6.0.tgz#a43f7261186623ce084e03cf522613fcb281e8bb"
+redux-symbiote@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/redux-symbiote/-/redux-symbiote-3.0.0.tgz#be968b216b93358a4f73afef5e17a0661e413dfa"
   dependencies:
     symbiote-symbol "^1.1.0"
 
