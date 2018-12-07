@@ -1,3 +1,3 @@
 export default interface ApiClient {
-  quotas(): Promise<any[]>;
+  quotas(): Promise<any[]>
 }

@@ -1,9 +1,9 @@
-import cx from 'classnames';
-import React from 'react';
-import styles from './clock.css';
+import cx from 'classnames'
+import React from 'react'
+import styles from './clock.css'
 interface Props {
-  lastUpdate: number;
-  light: boolean;
+  lastUpdate: number
+  light: boolean
 }
 
 export default ({ lastUpdate, light }: Props) => {
@@ -11,10 +11,10 @@ export default ({ lastUpdate, light }: Props) => {
     <div className={cx([styles.clock, light && styles.light])}>
       {format(new Date(lastUpdate))}
     </div>
-  );
-};
+  )
+}
 
 const format = (t: Date) =>
-  `${pad(t.getUTCHours())}:${pad(t.getUTCMinutes())}:${pad(t.getUTCSeconds())}`;
+  `${pad(t.getUTCHours())}:${pad(t.getUTCMinutes())}:${pad(t.getUTCSeconds())}`
 
-const pad = (n: number) => (n < 10 ? `0${n}` : n);
+const pad = (n: number) => (n < 10 ? `0${n}` : n)

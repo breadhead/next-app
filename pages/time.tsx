@@ -1,39 +1,39 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { AnyAction, Dispatch } from 'redux';
+import React from 'react'
+import { connect } from 'react-redux'
+import { AnyAction, Dispatch } from 'redux'
 
-import Examples, { actions } from '@app/features/examples';
-import { AppContext } from '@app/lib/server-types';
+import Examples, { actions } from '@app/features/examples'
+import { AppContext } from '@app/lib/server-types'
 
 interface Props {
-  start(): NodeJS.Timer;
+  start(): NodeJS.Timer
 }
 
 class Index extends React.Component<Props> {
   public static getInitialProps({ reduxStore, req }: AppContext) {
-    const isServer = !!req;
-    reduxStore.dispatch(actions.serverRenderClock(isServer) as any);
+    const isServer = !!req
+    reduxStore.dispatch(actions.serverRenderClock(isServer) as any)
 
-    return {};
+    return {}
   }
-  private timer?: NodeJS.Timer;
+  private timer?: NodeJS.Timer
 
   public componentDidMount() {
-    this.timer = this.props.start();
+    this.timer = this.props.start()
   }
 
   public componentWillUnmount() {
-    clearInterval(this.timer!);
+    clearInterval(this.timer!)
   }
 
   public render() {
-    return <Examples />;
+    return <Examples />
   }
 }
 
 export default connect(
   null,
   (dispatch: Dispatch<AnyAction>) => ({
-    start: () => actions.startClock(dispatch) as any
-  })
-)(Index);
+    start: () => actions.startClock(dispatch) as any,
+  }),
+)(Index)

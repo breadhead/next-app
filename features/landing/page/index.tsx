@@ -1,5 +1,5 @@
-import * as React from 'react';
+import * as React from 'react'
 
-const LandingPage = () => <p>Oncohelp</p>;
+const LandingPage = () => <p>Oncohelp</p>
 
-export default LandingPage;
+export default LandingPage

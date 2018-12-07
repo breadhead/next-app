@@ -1,14 +1,14 @@
-import Clock from '@app/ui/atoms/Clock';
-import Counter from '@app/ui/atoms/Counter';
+import Clock from '@app/ui/atoms/Clock'
+import Counter from '@app/ui/atoms/Counter'
 
 interface Props {
-  lastUpdate: number;
-  light: boolean;
-  count: number;
+  lastUpdate: number
+  light: boolean
+  count: number
 
-  inc(): void;
-  dec(): void;
-  reset(): void;
+  inc(): void
+  dec(): void
+  reset(): void
 }
 
 export default ({ lastUpdate, light, count, ...actions }: Props) => (
@@ -16,4 +16,4 @@ export default ({ lastUpdate, light, count, ...actions }: Props) => (
     <Clock lastUpdate={lastUpdate} light={light} />
     <Counter count={count} {...actions} />
   </div>
-);
+)

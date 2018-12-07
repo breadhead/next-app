@@ -26,7 +26,7 @@
     "lint:code": "tslint -p tsconfig.json -c tslint.json",
     "lint:style": "stylelint './**/*.css'",
     "test": "jest",
-    "pretty": "prettier --write --single-quote --trailing-comma none \"./**/*.{ts,tsx}\"",
+    "pretty": "prettier --write \"./**/*.{ts,tsx,js}\"",
     "ci": "yarn lint && yarn test"
   },
   "dependencies": {

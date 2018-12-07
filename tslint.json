@@ -4,15 +4,15 @@
   "jsRules": {},
   "rules": {
     "ter-indent": [true, 2],
-    "semicolon": [true, "always"],
+    "semicolon": [true, "never"],
     "quotemark": [true, "single", "jsx-double"],
     "interface-name": [true, "never-prefix"],
     "variable-name": false,
     "trailing-comma": [
       true,
       {
-        "multiline": "never",
-        "singleline": "never",
+        "multiline": "always",
+        "singleline": "es5",
         "esSpecCompliant": true
       }
     ],
