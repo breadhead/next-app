@@ -1,7 +1,6 @@
 import cx from 'classnames';
 import React from 'react';
 import styles from './clock.css';
-
 interface Props {
   lastUpdate: number;
   light: boolean;
