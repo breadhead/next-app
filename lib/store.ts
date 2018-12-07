@@ -26,9 +26,11 @@ export const initializeStore = (initialState?: State) =>
   createStore(
     reducer,
     initialState,
-    composeWithDevTools(applyMiddleware(
-      thunk.withExtraArgument({
-        api: new RealApiClient(),
-      } as ExtraArgs),
-    )),
+    composeWithDevTools(
+      applyMiddleware(
+        thunk.withExtraArgument({
+          api: new RealApiClient(),
+        } as ExtraArgs),
+      ),
+    ),
   )

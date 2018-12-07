@@ -1,4 +1,4 @@
-export { default as default } from './container'
+export { default } from './container'
 
 export { State, reducer } from './reducer'
 

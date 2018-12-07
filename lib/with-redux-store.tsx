@@ -16,6 +16,7 @@ const getOrCreateStore = (initialState?: State) => {
   }
 
   // Create store if unavailable on the client and set it on the window object
+  // prettier-ignore
   if (!(window as any)[__NEXT_REDUX_STORE__]) {
     (window as any)[__NEXT_REDUX_STORE__] = initializeStore(initialState)
   }
@@ -24,7 +25,6 @@ const getOrCreateStore = (initialState?: State) => {
 
 export default (App: any) => {
   return class AppWithRedux extends React.Component {
-
     public static async getInitialProps(appContext: AppContext) {
       // Get or Create the store with `undefined` as initialState
       // This allows you to set a custom default initialState
@@ -38,10 +38,7 @@ export default (App: any) => {
         appProps = await App.getInitialProps(appContext)
       }
 
-      return {
-        ...appProps,
-        initialReduxState: reduxStore.getState(),
-      }
+      return { ...appProps, initialReduxState: reduxStore.getState() }
     }
     private reduxStore: Store
 

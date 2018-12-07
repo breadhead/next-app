@@ -13,4 +13,7 @@ const mapDipatchToProps = (dispatch: Dispatch<AnyAction>) => ({
   reset: () => dispatch(actions.reset()),
 })
 
-export default connect(mapStateToProps, mapDipatchToProps)(Examples)
+export default connect(
+  mapStateToProps,
+  mapDipatchToProps,
+)(Examples)

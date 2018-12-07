@@ -23,15 +23,16 @@ interface Actions {
 const { actions, reducer } = createSymbiote<State, Actions>(
   initialState,
   {
-    tick: (state: State, lastUpdate, light) => ({ ...state, lastUpdate, light }),
-    increment: (state) => ({ ...state, count: state.count + 1 }),
-    decrement: (state) => ({ ...state, count: state.count - 1 }),
-    reset: (state) => ({ ...state, count: initialState.count }),
+    tick: (state: State, lastUpdate, light) => ({
+      ...state,
+      lastUpdate,
+      light,
+    }),
+    increment: state => ({ ...state, count: state.count + 1 }),
+    decrement: state => ({ ...state, count: state.count - 1 }),
+    reset: state => ({ ...state, count: initialState.count }),
   },
   'example',
 )
 
-export {
-  State, reducer,
-  Actions, actions,
-}
+export { State, reducer, Actions, actions }

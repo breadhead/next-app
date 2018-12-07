@@ -10,7 +10,6 @@ interface Props {
 }
 
 class Index extends React.Component<Props> {
-
   public static getInitialProps({ reduxStore, req }: AppContext) {
     const isServer = !!req
     reduxStore.dispatch(actions.serverRenderClock(isServer) as any)
@@ -28,9 +27,7 @@ class Index extends React.Component<Props> {
   }
 
   public render() {
-    return (
-      <Examples />
-    )
+    return <Examples />
   }
 }
 
