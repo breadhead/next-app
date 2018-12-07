@@ -1,6 +1,6 @@
-export { default as default } from './container'
+export { default } from './container';
 
-export { State, reducer } from './reducer'
+export { State, reducer } from './reducer';
 
-import * as actions from './actions'
-export { actions }
+import * as actions from './actions';
+export { actions };

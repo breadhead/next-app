@@ -1,12 +1,12 @@
-import { shallow } from 'enzyme'
-import { shallowToJson } from 'enzyme-to-json'
-import React from 'react'
+import { shallow } from 'enzyme';
+import { shallowToJson } from 'enzyme-to-json';
+import React from 'react';
 
-import Clock from '.'
+import Clock from '.';
 
 describe('clock ui', () => {
   test('Button renders correctly', () => {
-    const output = shallow(<Clock lastUpdate={12} light />)
-    expect(shallowToJson(output)).toMatchSnapshot()
-  })
-})
+    const output = shallow(<Clock lastUpdate={12} light />);
+    expect(shallowToJson(output)).toMatchSnapshot();
+  });
+});

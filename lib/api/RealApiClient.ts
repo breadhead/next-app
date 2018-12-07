@@ -1,7 +1,7 @@
-import ApiClient from './ApiClient'
+import ApiClient from './ApiClient';
 
 export default class RealApiClient implements ApiClient {
   public quotas() {
-    return Promise.resolve([])
+    return Promise.resolve([]);
   }
 }
