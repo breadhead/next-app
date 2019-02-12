@@ -8003,10 +8003,10 @@ redux-devtools-extension@^2.13.2:
   resolved "https://registry.yarnpkg.com/redux-devtools-extension/-/redux-devtools-extension-2.13.5.tgz#3ff34f7227acfeef3964194f5f7fc2765e5c5a39"
   integrity sha512-QQ9BRy77oURHMdGys9rfQcCQDzXZ1T4oW+eUyE5Cg7DNVau69HJzc4YNDMOmpi0Dzpi1zOQgQ2rUpgJta4Lfqg==
 
-redux-symbiote@^2.6.0:
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/redux-symbiote/-/redux-symbiote-2.6.0.tgz#a43f7261186623ce084e03cf522613fcb281e8bb"
-  integrity sha512-1YSEC70IBt5ZNp1Ij2YlMVUeR/d2v6vjoAAuEBxgwL0BA+QYq9/lhIgveu4JhF/MP7shhQw1Aa+WV9cqhZ+ygw==
+redux-symbiote@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/redux-symbiote/-/redux-symbiote-3.0.2.tgz#937a91e5ba2d40fd8ee5d8ff0f9759c919eb7945"
+  integrity sha512-VXPTmG0CycLWhrxebQ+qCEXKJCa9Sbshx3bi0lkH812OR/CroGESQQS9D5YJ2S8ngcEOp+ylB1S58d2YxrWhhg==
   dependencies:
     symbiote-symbol "^1.1.0"
 

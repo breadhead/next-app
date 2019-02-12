@@ -39,7 +39,7 @@
     "react-redux": "^5.1.1",
     "redux": "^4.0.1",
     "redux-devtools-extension": "^2.13.2",
-    "redux-symbiote": "^2.6.0",
+    "redux-symbiote": "^3.0.2",
     "redux-thunk": "^2.1.0",
     "reselect": "^4.0.0"
   },
