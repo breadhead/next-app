@@ -8,7 +8,7 @@ interface Props {
   reset(): void
 }
 
-class Counter extends Component<Props> {
+export class Counter extends Component<Props> {
   public render() {
     const { count, inc, dec, reset } = this.props
     return (
@@ -23,5 +23,3 @@ class Counter extends Component<Props> {
     )
   }
 }
-
-export default Counter

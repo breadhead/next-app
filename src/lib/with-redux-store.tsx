@@ -23,7 +23,7 @@ const getOrCreateStore = (initialState?: State) => {
   return (window as any)[__NEXT_REDUX_STORE__]
 }
 
-export default (App: any) => {
+export const withReduxStore = (App: any) => {
   return class AppWithRedux extends React.Component {
     public static async getInitialProps(appContext: AppContext) {
       // Get or Create the store with `undefined` as initialState

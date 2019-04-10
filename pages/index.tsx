@@ -1,8 +1,8 @@
 import { Component } from 'react'
 
-import LandingPage from '@app/features/landing'
+import { LandingPage } from '@app/features/landing'
 
-class Index extends Component {
+export class Index extends Component {
   public static getInitialProps() {
     // prepare data for landing
 
@@ -13,5 +13,3 @@ class Index extends Component {
     return <LandingPage />
   }
 }
-
-export default Index

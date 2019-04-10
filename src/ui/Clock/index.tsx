@@ -6,7 +6,7 @@ interface Props {
   light: boolean
 }
 
-export default ({ lastUpdate, light }: Props) => {
+export const Clock = ({ lastUpdate, light }: Props) => {
   return (
     <div className={cx([styles.clock, light && styles.light])}>
       {format(new Date(lastUpdate))}

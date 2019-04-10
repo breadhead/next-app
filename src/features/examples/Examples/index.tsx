@@ -1,5 +1,5 @@
-import Clock from '@app/ui/Clock'
-import Counter from '@app/ui/Counter'
+import { Clock } from '@app/ui/Clock'
+import { Counter } from '@app/ui/Counter'
 
 interface Props {
   lastUpdate: number
@@ -11,7 +11,7 @@ interface Props {
   reset(): void
 }
 
-export default ({ lastUpdate, light, count, ...actions }: Props) => (
+export const Examples = ({ lastUpdate, light, count, ...actions }: Props) => (
   <div>
     <Clock lastUpdate={lastUpdate} light={light} />
     <Counter count={count} {...actions} />
