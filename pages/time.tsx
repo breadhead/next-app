@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import { connect } from 'react-redux'
 import { AnyAction, Dispatch } from 'redux'
 
@@ -34,6 +34,6 @@ class Index extends React.Component<Props> {
 export default connect(
   null,
   (dispatch: Dispatch<AnyAction>) => ({
-    start: () => actions.startClock(dispatch) as any,
+    start: () => actions.startClock(dispatch),
   }),
-)(Index)
+)(Index as any)
