@@ -7,8 +7,8 @@ import {
   State as ExampleState,
 } from '@app/features/examples'
 
-import ApiClient from './api/ApiClient'
-import RealApiClient from './api/RealApiClient'
+import ApiClient from '../api/ApiClient'
+import RealApiClient from '../api/RealApiClient'
 
 export interface State {
   example: ExampleState

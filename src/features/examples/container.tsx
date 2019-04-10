@@ -2,8 +2,8 @@ import { connect } from 'react-redux'
 import { AnyAction, Dispatch } from 'redux'
 
 import { Examples } from './Examples'
-import { actions } from './reducer'
-import { getAll } from './selectors'
+import { actions } from '../../domain/examples/reducer'
+import { getAll } from '../../domain/examples/selectors'
 
 const mapStateToProps = getAll
 

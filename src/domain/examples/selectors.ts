@@ -1,6 +1,6 @@
 import { createSelector } from 'reselect'
 
-import { State } from '@app/lib/store'
+import { State } from '@app/domain/store/store'
 
 import { State as ExampleState } from './reducer'
 
