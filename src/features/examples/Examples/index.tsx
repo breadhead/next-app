@@ -1,5 +1,5 @@
-import Clock from '@app/ui/atoms/Clock'
-import Counter from '@app/ui/atoms/Counter'
+import Clock from '@app/ui/Clock'
+import Counter from '@app/ui/Counter'
 
 interface Props {
   lastUpdate: number

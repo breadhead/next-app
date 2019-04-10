@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import { AnyAction, Dispatch } from 'redux'
 
-import Examples from './organisms/Examples'
+import Examples from './Examples'
 import { actions } from './reducer'
 import { getAll } from './selectors'
 
