@@ -1,0 +1,11 @@
+{
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "eslint.options": {
+    "configFile": "./node_modules/@solid-soda/scripts/config/eslint-ts.js"
+  }
+}

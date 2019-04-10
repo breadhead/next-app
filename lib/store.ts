@@ -16,7 +16,7 @@ export interface State {
 
 const reducer = combineReducers({
   example: exampleReducer,
-})
+} as any)
 
 export interface ExtraArgs {
   api: ApiClient
