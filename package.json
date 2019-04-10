@@ -32,6 +32,8 @@
     "storybook": "start-storybook -p 9001 -c .storybook"
   },
   "dependencies": {
+    "@types/react": "^16.8.13",
+    "@types/react-dom": "^16.8.3",
     "@zeit/next-typescript": "^1.1.1",
     "args-parser": "^1.1.0",
     "classnames": "^2.2.6",
@@ -40,8 +42,8 @@
     "next-css-unpluggable": "^2.1.13",
     "next-routes": "^1.4.2",
     "pm2": "^3.5.0",
-    "react": "^16.6.3",
-    "react-dom": "^16.6.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "react-redux": "^5.1.1",
     "redux": "^4.0.1",
     "redux-clear": "^1.1.2",
@@ -66,7 +68,6 @@
     "@types/enzyme": "^3.1.15",
     "@types/jest": "^23.3.9",
     "@types/next": "^7.0.5",
-    "@types/react": "^16.7.6",
     "@types/react-redux": "^6.0.9",
     "@types/redux-thunk": "^2.1.0",
     "@types/storybook__addon-actions": "^3.4.2",
