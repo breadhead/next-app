@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { AnyAction, Dispatch } from 'redux'
 
 import Examples, { actions } from '@app/features/examples'
-import { AppContext } from '@app/lib/server-types'
+import { AppContext } from '@app/domain/store/server-types'
 
 interface Props {
   start(): NodeJS.Timer

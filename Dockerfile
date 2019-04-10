@@ -1,18 +1,24 @@
 FROM mhart/alpine-node:10 as build
 
-WORKDIR /usr/src
-COPY package.json yarn.lock ./
-RUN yarn install
+WORKDIR /app
 
 COPY . .
-RUN yarn build && yarn --production
+RUN yarn
 
-FROM mhart/alpine-node:base-10
+WORKDIR /app/front
+RUN yarn build
 
-WORKDIR /usr/src
+FROM keymetrics/pm2:10-alpine
+
+WORKDIR /app
+
 ENV NODE_ENV="production"
 ENV PATH="./node_modules/.bin:$PATH"
 
-COPY --from=build /usr/src .
+COPY --from=build /app .
 
-CMD ["next", "start"]
+WORKDIR /app
+
+EXPOSE 3001
+
+CMD [ "pm2-docker", "start", "pm2.json" ]

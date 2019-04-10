@@ -1,10 +1,9 @@
-import React from 'react'
+import { Component } from 'react'
 
-import LandingPage from '@app/features/landing'
-import { AppContext } from '@app/lib/server-types'
+import { LandingPage } from '@app/features/landing'
 
-class Index extends React.Component {
-  public static getInitialProps(context: AppContext) {
+export class Index extends Component {
+  public static getInitialProps() {
     // prepare data for landing
 
     return {}
@@ -14,5 +13,3 @@ class Index extends React.Component {
     return <LandingPage />
   }
 }
-
-export default Index
