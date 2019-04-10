@@ -1,5 +1,4 @@
-import { Action } from 'redux'
-import { createSymbiote } from 'redux-symbiote'
+import { ClearAction, createClearRedux } from 'redux-clear'
 
 interface State {
   lastUpdate: number
@@ -14,25 +13,24 @@ const initialState = {
 } as State
 
 interface Actions {
-  tick(lastUpdate: number, light: boolean): Action
-  increment(): Action
-  decrement(): Action
-  reset(): Action
+  tick: ClearAction<[number, boolean]>
+  increment: ClearAction
+  decrement: ClearAction
+  reset: ClearAction
 }
 
-const { actions, reducer } = createSymbiote<State, Actions>(
-  initialState,
+const { actions, reducer } = createClearRedux<State, Actions>(
   {
-    tick: (state: State, lastUpdate, light) => ({
+    tick: state => (lastUpdate, light) => ({
       ...state,
       lastUpdate,
       light,
     }),
-    increment: state => ({ ...state, count: state.count + 1 }),
-    decrement: state => ({ ...state, count: state.count - 1 }),
-    reset: state => ({ ...state, count: initialState.count }),
+    increment: state => () => ({ ...state, count: state.count + 1 }),
+    decrement: state => () => ({ ...state, count: state.count - 1 }),
+    reset: state => () => ({ ...state, count: initialState.count }),
   },
-  'example',
+  initialState,
 )
 
 export { State, reducer, Actions, actions }

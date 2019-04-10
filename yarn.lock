@@ -7294,6 +7294,11 @@ nanoid@1.2.1:
   resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-1.2.1.tgz#922bf6c10e35f7b208993768dad643577c907adf"
   integrity sha512-S1QSG+TQtsqr2/ujHZcNT0OxygffUaUT755qTc/SPKfQ0VJBlOO6qb1425UYoHXPvCZ3pWgMVCuy1t7+AoCxnQ==
 
+nanoid@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-2.0.1.tgz#deb55cac196e3f138071911dabbc3726eb048864"
+  integrity sha512-k1u2uemjIGsn25zmujKnotgniC/gxQ9sdegdezeDiKdkDW56THUMqlz3urndKCXJxA6yPzSZbXx/QCMe/pxqsA==
+
 nanomatch@^1.2.9:
   version "1.2.13"
   resolved "https://registry.yarnpkg.com/nanomatch/-/nanomatch-1.2.13.tgz#b87a8aa4fc0de8fe6be88895b38983ff265bd119"
@@ -9025,17 +9030,18 @@ redent@^2.0.0:
     indent-string "^3.0.0"
     strip-indent "^2.0.0"
 
+redux-clear@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/redux-clear/-/redux-clear-1.1.2.tgz#a273079d581e4f77caeb4679b1def859974d2b24"
+  integrity sha512-Fui6oEcKtIKF0+ryOmmoYbI6fHV3I0bCC1qGVtV2Z0zZYFah83Fw4vmNvGxMXssAMRgLT+g9QwCqliTav7BoDg==
+  dependencies:
+    nanoid "^2.0.1"
+    tsoption "^0.7.0"
+
 redux-devtools-extension@^2.13.2:
   version "2.13.5"
   resolved "https://registry.yarnpkg.com/redux-devtools-extension/-/redux-devtools-extension-2.13.5.tgz#3ff34f7227acfeef3964194f5f7fc2765e5c5a39"
   integrity sha512-QQ9BRy77oURHMdGys9rfQcCQDzXZ1T4oW+eUyE5Cg7DNVau69HJzc4YNDMOmpi0Dzpi1zOQgQ2rUpgJta4Lfqg==
-
-redux-symbiote@^2.6.0:
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/redux-symbiote/-/redux-symbiote-2.6.0.tgz#a43f7261186623ce084e03cf522613fcb281e8bb"
-  integrity sha512-1YSEC70IBt5ZNp1Ij2YlMVUeR/d2v6vjoAAuEBxgwL0BA+QYq9/lhIgveu4JhF/MP7shhQw1Aa+WV9cqhZ+ygw==
-  dependencies:
-    symbiote-symbol "^1.1.0"
 
 redux-thunk@*, redux-thunk@^2.1.0:
   version "2.3.0"
@@ -10274,11 +10280,6 @@ svg-tags@^1.0.0:
   resolved "https://registry.yarnpkg.com/svg-tags/-/svg-tags-1.0.0.tgz#58f71cee3bd519b59d4b2a843b6c7de64ac04764"
   integrity sha1-WPcc7jvVGbWdSyqEO2x95krAR2Q=
 
-symbiote-symbol@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/symbiote-symbol/-/symbiote-symbol-1.1.0.tgz#fbee987ab91da60c8d9686b3873560099c71e6fc"
-  integrity sha512-2wLZ/0YbC/msmw+R1OITfmXEfxUHPBSsEi/HdaqPyL8JaezKYfU7SixmVgwblEHIbaVehjW+xMoCLuAAjHjRzA==
-
 symbol-observable@^1.1.0, symbol-observable@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/symbol-observable/-/symbol-observable-1.2.0.tgz#c22688aed4eab3cdc2dfeacbb561660560a00804"
@@ -10571,6 +10572,11 @@ tslint@5:
     semver "^5.3.0"
     tslib "^1.8.0"
     tsutils "^2.29.0"
+
+tsoption@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/tsoption/-/tsoption-0.7.0.tgz#54634ff56d1bd09d8886fd5bd0d1a5373789440a"
+  integrity sha512-0FaCR76q5OAb/73Yvl7GOM4IldI+fN4n0w7oKW7JHsuYMRfvhCj29kfKK11YzYywwIXCRtb2UwBrz1wVKzdmrQ==
 
 tsutils@^2.29.0:
   version "2.29.0"
