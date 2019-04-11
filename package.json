@@ -44,7 +44,7 @@
     "pm2": "^3.5.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-redux": "^5.1.1",
+    "react-redux": "^7.0.1",
     "redux": "^4.0.1",
     "redux-clear": "^1.1.2",
     "redux-devtools-extension": "^2.13.8",
