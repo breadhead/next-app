@@ -9,9 +9,6 @@ Boilerplate for React Application
 + `yarn`
 + `yarn dev`
 
-### Start for development
-+ `yarn build`
-
 ### Checks
 + `yarn test` to run unit tests
 + `yarn lint:code` to check code-style
