@@ -9,7 +9,7 @@ Boilerplate for React Application
 + `yarn`
 + `yarn dev`
 
-### Start dev
+### Start for development
 + `yarn build`
 
 ### Checks
@@ -17,7 +17,7 @@ Boilerplate for React Application
 + `yarn lint:code` to check code-style
 + `yarn lint:style` to check style-style
 
-### Commit
+### Commit
 + `yarn s cz` to commit
 
 ### Storybook
