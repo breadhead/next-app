@@ -1,9 +1,9 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
 import { AnyAction, Dispatch } from 'redux'
+import { AppContext } from '@app/domain/AppContext'
 
 import Examples, { actions } from '@app/features/examples'
-import { AppContext } from '@app/domain/store/server-types'
 
 interface Props {
   start(): NodeJS.Timer

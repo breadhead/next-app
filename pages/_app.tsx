@@ -1,16 +1,15 @@
 import App, { Container } from 'next/app'
-import React, { Component as ReactComponent } from 'react'
+import { Api } from '@app/domain/api'
+import { State } from '@app/domain/store/State'
+import { AppContext } from '@app/domain/AppContext'
+import { initializeStore } from '@app/domain/store/initializeStore'
+
+import React from 'react'
 import { Provider } from 'react-redux'
 
-import { withReduxStore, Store } from '@app/domain/store/with-redux-store'
+import { WithReduxProps, withReduxStore } from '@breadhead/with-redux-store'
 
-interface Props {
-  reduxStore: Store
-  pageProps: any
-  Component: ReactComponent
-}
-
-class OncohelpWeb extends App<Props> {
+class AppWeb extends App<WithReduxProps<State>> {
   public render() {
     const { Component, pageProps, reduxStore } = this.props
 
@@ -24,4 +23,7 @@ class OncohelpWeb extends App<Props> {
   }
 }
 
-export default withReduxStore(OncohelpWeb)
+export default withReduxStore<State, Api, AppContext>(
+  AppWeb as any,
+  initializeStore,
+)
