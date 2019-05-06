@@ -65,7 +65,7 @@
     "@commitlint/cli": "^7.2.1",
     "@emotion/core": "^10.0.10",
     "@emotion/styled": "^10.0.10",
-    "@solid-soda/scripts": "^1.4.1",
+    "@solid-soda/scripts": "^1.7.0",
     "@storybook/addon-actions": "^5.0.6",
     "@storybook/addon-links": "^5.0.6",
     "@storybook/addon-viewport": "^5.0.6",
