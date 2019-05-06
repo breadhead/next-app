@@ -1,16 +1,13 @@
 import * as React from 'react'
-import { Component } from 'react'
 
 import { LandingPage } from '@app/features/landing'
+import { Link } from '@app/features/routing'
 
-export default class Index extends Component {
-  public static getInitialProps() {
-    // prepare data for landing
+const Index = () => (
+  <>
+    <LandingPage />
+    <Link route="/time">Таймер</Link>
+  </>
+)
 
-    return {}
-  }
-
-  public render() {
-    return <LandingPage />
-  }
-}
+export default Index

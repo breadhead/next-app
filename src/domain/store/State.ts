@@ -1,5 +1,5 @@
-import { State as ExamplesState } from '../examples/reducer'
+import { State as TimeState } from '../time/reducer'
 
 export interface State {
-  examples: ExamplesState
+  time: TimeState
 }

@@ -2,18 +2,16 @@ import { ClearAction, createClearRedux } from 'redux-clear'
 
 interface State {
   lastUpdate: number
-  light: boolean
   count: number
 }
 
 const initialState = {
   lastUpdate: 0,
-  light: false,
   count: 0,
 } as State
 
 interface Actions {
-  tick: ClearAction<[number, boolean]>
+  tick: ClearAction<[number]>
   increment: ClearAction
   decrement: ClearAction
   reset: ClearAction
@@ -21,10 +19,9 @@ interface Actions {
 
 const { actions, reducer } = createClearRedux<State, Actions>(
   {
-    tick: state => (lastUpdate, light) => ({
+    tick: state => lastUpdate => ({
       ...state,
       lastUpdate,
-      light,
     }),
     increment: state => () => ({ ...state, count: state.count + 1 }),
     decrement: state => () => ({ ...state, count: state.count - 1 }),
