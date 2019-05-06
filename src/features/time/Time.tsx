@@ -2,13 +2,13 @@ import { useCallback } from 'react'
 import { Counter } from '@app/ui/Counter'
 import { useThunk } from '@breadhead/thunk-utils'
 import { actions } from '@app/domain/time/reducer'
-import { selectAllExamples } from '@app/domain/time/selectors'
+import { selectAll } from '@app/domain/time/selectors'
 import { useMappedState } from 'redux-react-hook'
 import { Clock } from '@app/ui/Clock'
 
 export const Time = () => {
   const dispatch = useThunk()
-  const mapState = useMappedState(selectAllExamples)
+  const mapState = useMappedState(selectAll)
 
   const { lastUpdate, count } = mapState
 
