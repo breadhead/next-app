@@ -3,6 +3,7 @@ import { Api } from '@app/domain/api'
 import { State } from '@app/domain/store/State'
 import { AppContext } from '@app/domain/AppContext'
 import { initializeStore } from '@app/domain/store/initializeStore'
+import { StoreContext } from 'redux-react-hook'
 
 import React from 'react'
 import { Provider } from 'react-redux'
@@ -16,7 +17,9 @@ class AppWeb extends App<WithReduxProps<State>> {
     return (
       <Container>
         <Provider store={reduxStore}>
-          <Component {...pageProps} />
+          <StoreContext.Provider value={reduxStore}>
+            <Component {...pageProps} />
+          </StoreContext.Provider>
         </Provider>
       </Container>
     )

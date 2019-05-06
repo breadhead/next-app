@@ -1,39 +1,22 @@
 import * as React from 'react'
-import { connect } from 'react-redux'
-import { AnyAction, Dispatch } from 'redux'
 import { AppContext } from '@app/domain/AppContext'
 
-import Examples, { actions } from '@app/features/examples'
+import { Time } from '@app/features/time'
+import { serverRenderClock } from '@app/domain/time/actions/serverRenderClock'
+import { startClock } from '@app/domain/time/actions/startClock'
+import { useThunk } from '@breadhead/thunk-utils'
 
-interface Props {
-  start(): NodeJS.Timer
+const Index = () => {
+  const dispatch = useThunk()
+  startClock(dispatch as any)
+
+  return <Time />
 }
 
-class Index extends React.Component<Props> {
-  public static getInitialProps({ reduxStore, req }: AppContext) {
-    const isServer = !!req
-    reduxStore.dispatch(actions.serverRenderClock(isServer) as any)
+Index.getInitialProps = async ({ reduxStore }: AppContext) => {
+  reduxStore.dispatch(serverRenderClock() as any)
 
-    return {}
-  }
-  private timer?: NodeJS.Timer
-
-  public componentDidMount() {
-    this.timer = this.props.start()
-  }
-
-  public componentWillUnmount() {
-    clearInterval(this.timer!)
-  }
-
-  public render() {
-    return <Examples />
-  }
+  return {}
 }
 
-export default connect(
-  null,
-  (dispatch: Dispatch<AnyAction>) => ({
-    start: () => actions.startClock(dispatch),
-  }),
-)(Index as any)
+export default Index

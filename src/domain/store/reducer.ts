@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
 
-import { reducer as examplesReducer } from '../examples/reducer'
+import { reducer as examplesReducer } from '../time/reducer'
 
 import { State } from './State'
 

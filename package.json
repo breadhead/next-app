@@ -53,6 +53,7 @@
     "redux": "^4.0.1",
     "redux-clear": "^1.1.2",
     "redux-devtools-extension": "^2.13.8",
+    "redux-react-hook": "^3.3.1",
     "redux-thunk": "^2.1.0",
     "reselect": "^4.0.0"
   },
