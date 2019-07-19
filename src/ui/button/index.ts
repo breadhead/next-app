@@ -1,4 +1,6 @@
 export { Button } from './Button'
 export { ButtonSize } from './ButtonSize'
-export { ButtonProps } from './ButtonProps'
+import { ButtonProps } from './ButtonProps'
 export { ButtonKind } from './ButtonKind'
+
+export type ButtonProps = ButtonProps

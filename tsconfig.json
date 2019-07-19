@@ -1,31 +1,30 @@
 {
   "compilerOptions": {
-    "allowJs": true,
-    "allowSyntheticDefaultImports": true,
-    "baseUrl": ".",
+    "target": "esnext",
+    "module": "esnext",
     "jsx": "preserve",
     "lib": ["dom", "es2017"],
-    "module": "esnext",
+    "baseUrl": ".",
     "moduleResolution": "node",
+    "strict": true,
+    "allowJs": true,
     "noEmit": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "preserveConstEnums": true,
+    "isolatedModules": true,
     "removeComments": false,
-    "skipLibCheck": true,
+    "preserveConstEnums": true,
     "sourceMap": true,
-    "strict": true,
-    "target": "esnext",
-    "plugins": [
-      {
-        "name": "typescript-plugin-css-modules",
-        "options": {
-          "customMatcher": "\\.css$"
-        }
-      }
-    ],
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
     "paths": {
-      "@app/*": ["src/*"]
+      "@app/*": ["src/*"],
+      "*": ["types/*"]
     }
-  }
+  },
+  "exclude": ["dist", ".next", "out", "next.config.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
 }

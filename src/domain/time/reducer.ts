@@ -1,6 +1,6 @@
 import { ClearAction, createClearRedux } from 'redux-clear'
 
-interface State {
+export interface State {
   lastUpdate: number
   count: number
 }
@@ -10,7 +10,7 @@ const initialState = {
   count: 0,
 } as State
 
-interface Actions {
+export interface Actions {
   tick: ClearAction<[number]>
   increment: ClearAction
   decrement: ClearAction
@@ -30,4 +30,4 @@ const { actions, reducer } = createClearRedux<State, Actions>(
   initialState,
 )
 
-export { State, reducer, Actions, actions }
+export { reducer, actions }

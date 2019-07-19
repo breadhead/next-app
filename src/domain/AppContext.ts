@@ -1,6 +1,6 @@
 import { IncomingMessage, OutgoingMessage } from 'http'
 
-import { Store } from './store/Store'
+import { Store } from './store/store'
 
 interface Params {
   [key: string]: string
