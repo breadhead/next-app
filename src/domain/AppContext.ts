@@ -1,7 +1,5 @@
 import { IncomingMessage, OutgoingMessage } from 'http'
 
-import { Store } from './store/store'
-
 interface Params {
   [key: string]: string
 }
@@ -16,7 +14,6 @@ interface Request {
 }
 
 export interface AppContext<Query = never> {
-  reduxStore: Store
   query: Query
   req: IncomingMessage & Request
   res: OutgoingMessage & Response

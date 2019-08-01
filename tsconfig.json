@@ -6,6 +6,7 @@
     "lib": ["dom", "es2017"],
     "baseUrl": ".",
     "moduleResolution": "node",
+    "experimentalDecorators": true,
     "strict": true,
     "allowJs": true,
     "noEmit": true,
