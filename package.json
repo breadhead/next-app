@@ -75,7 +75,7 @@
     "@types/jest": "^23.3.9",
     "@types/js-cookie": "^2.2.2",
     "@types/next": "^7.0.5",
-    "@types/react-redux": "^6.0.9",
+    "@types/react-redux": "^7.1.2",
     "@types/redux-thunk": "^2.1.0",
     "@types/storybook__addon-actions": "^3.4.2",
     "@types/storybook__react": "^4.0.1",
