@@ -1,5 +1,5 @@
-const withPlugins = require('next-compose-plugins')
-const withCSS = require('next-css-unpluggable')
+const withPlugins = require('next-compose-plugins');
+const withCSS = require('next-css-unpluggable');
 
 module.exports = withPlugins([
   [
@@ -14,4 +14,4 @@ module.exports = withPlugins([
       backUrlServer: process.env.BACK_URL_SERVER || 'http://localhost:3000',
     },
   },
-])
+]);

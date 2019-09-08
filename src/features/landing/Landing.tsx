@@ -1,3 +1,3 @@
-import * as React from 'react'
+import * as React from 'react';
 
-export const LandingPage = () => <p>your new app</p>
+export const LandingPage = () => <p>your new app</p>;

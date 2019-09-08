@@ -1,7 +1,7 @@
 .clock {
-  padding: 15px;
   display: inline-block;
-  color: #82fa58;
+  padding: 15px;
   font: 50px menlo, monaco, monospace;
+  color: #82fa58;
   background-color: #000;
 }

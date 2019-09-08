@@ -4,4 +4,4 @@ module.exports = {
     'postcss-nesting': {},
     'postcss-preset-env': {},
   },
-}
+};

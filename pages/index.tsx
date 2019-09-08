@@ -1,5 +1,5 @@
-import * as React from 'react'
-import Link from 'next/link'
+import Link from 'next/link';
+import * as React from 'react';
 
 const Index = () => (
   <>
@@ -7,6 +7,6 @@ const Index = () => (
       <a>Таймер</a>
     </Link>
   </>
-)
+);
 
-export default Index
+export default Index;

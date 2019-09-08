@@ -1,9 +1,9 @@
-import cx from 'classnames'
-import React from 'react'
+import cx from 'classnames';
+import React from 'react';
 
-import styles from './Button.css'
-import { ButtonProps } from './ButtonProps'
-import { getButtonType } from './helpers/getButtonType'
+import styles from './Button.css';
+import { ButtonProps } from './ButtonProps';
+import { getButtonType } from './helpers/getButtonType';
 
 export const Button = ({
   children,
@@ -20,4 +20,4 @@ export const Button = ({
   >
     {children}
   </button>
-)
+);

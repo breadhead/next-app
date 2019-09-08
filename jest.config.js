@@ -9,4 +9,4 @@ module.exports = {
   moduleFileExtensions: ['js', 'jsx', 'json', 'ts', 'tsx'],
   testMatch: ['**/?(*.)+(spec|test).ts?(x)'],
   setupTestFrameworkScriptFile: '<rootDir>/.jest/jestSetup.js',
-}
+};

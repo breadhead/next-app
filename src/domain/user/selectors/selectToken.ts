@@ -1,3 +1,3 @@
-import { Option } from 'tsoption'
+import { Option } from 'tsoption';
 
-export const selectToken = () => Option.of('mememe')
+export const selectToken = () => Option.of('mememe');

@@ -1,8 +1,10 @@
+import React from 'react';
+
 interface Props {
-  count: number
-  inc: () => void
-  dec: () => void
-  reset: () => void
+  count: number;
+  inc: () => void;
+  dec: () => void;
+  reset: () => void;
 }
 
 export const Counter = ({ count, inc, dec, reset }: Props) => (
@@ -14,4 +16,4 @@ export const Counter = ({ count, inc, dec, reset }: Props) => (
     <button onClick={dec}>-1</button>
     <button onClick={reset}>Reset</button>
   </div>
-)
+);
