@@ -2,7 +2,7 @@ import axios, { AxiosInstance } from 'axios';
 import getConfig from 'next/config';
 import { Option } from 'tsoption';
 
-import { canUseDOM } from '@app/helpers/CanUseDom';
+import { canUseDOM } from '@app/lib/CanUseDom';
 
 const { publicRuntimeConfig } = getConfig();
 const { backUrl, backUrlServer } = publicRuntimeConfig;
