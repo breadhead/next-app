@@ -1,3 +1,4 @@
+import makeInspectable from 'mobx-devtools-mst';
 import {
   applySnapshot,
   Instance,
@@ -5,8 +6,8 @@ import {
   SnapshotOut,
   types,
 } from 'mobx-state-tree';
+
 import { Counter } from './Counter';
-import { asReduxStore, connectReduxDevtools } from 'mst-middlewares';
 
 let store: IStore = null as any;
 
@@ -29,6 +30,6 @@ export const initializeStore = (isServer: boolean, snapshot = null) => {
     applySnapshot(store, snapshot);
   }
 
-  connectReduxDevtools(require('remotedev'), store);
+  makeInspectable(store);
   return store;
 };

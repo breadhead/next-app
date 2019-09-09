@@ -1,9 +1,10 @@
-import * as React from 'react';
 import { observe } from 'mobx';
+import { observer } from 'mobx-react-lite';
+import * as React from 'react';
+
+import { useStore } from '@app/domain/store/storeContext';
 
 import s from './Landing.css';
-import { observer } from 'mobx-react-lite';
-import { useStore } from '@app/domain/store/storeContext';
 
 export const LandingPage = observer(() => {
   const store = useStore();

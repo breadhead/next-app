@@ -1,6 +1,7 @@
-import React, { createContext, useContext } from 'react';
-import { IStore } from './root';
 import { useLocalStore } from 'mobx-react';
+import React, { createContext, useContext } from 'react';
+
+import { IStore } from './root';
 
 export const storeContext = createContext<IStore | null>(null);
 

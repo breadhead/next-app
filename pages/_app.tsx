@@ -12,8 +12,8 @@ import App from 'next/app';
 import React from 'react';
 
 import { IStore, initializeStore } from '@app/domain/store/root';
-import { canUseDOM } from '@app/lib/CanUseDom';
 import { storeContext } from '@app/domain/store/storeContext';
+import { canUseDOM } from '@app/lib/CanUseDom';
 
 interface IOwnProps {
   isServer: boolean;
