@@ -21,6 +21,7 @@
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
+    "debug": "node --inspect --inspect-brk=9229 server.js",
     "start": "pm2 start ./pm2.json",
     "lint": "yarn lint:style && yarn lint:code",
     "lint:code": "yarn s lint",
@@ -31,13 +32,16 @@
     "s": "yarn soda"
   },
   "dependencies": {
+    "@types/lodash": "^4.14.138",
     "@types/mobx-devtools-mst": "^0.9.0",
     "@types/react": "^16.9.2",
     "@types/react-dom": "^16.9.0",
     "args-parser": "^1.1.0",
     "classnames": "^2.2.6",
+    "cookie-parser": "^1.4.4",
     "express": "^4.17.1",
     "js-cookie": "^2.2.1",
+    "lodash": "^4.17.15",
     "mobx": "^5.13.0",
     "mobx-devtools-mst": "^0.9.21",
     "mobx-react": "^6.1.3",
