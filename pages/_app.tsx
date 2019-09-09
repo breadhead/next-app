@@ -1,6 +1,14 @@
 import { Provider } from 'mobx-react';
 import App, { Container } from 'next/app';
 import React from 'react';
+import 'reset-css';
+
+/* order is important because of mixins */
+import '@app/ui/globals/queries.css?CSSModulesDisable';
+import '@app/ui/globals/colors.css?CSSModulesDisable';
+import '@app/ui/globals/fonts.css?CSSModulesDisable';
+import '@app/ui/globals/utils.css?CSSModulesDisable';
+import '@app/ui/globals/layout.css?CSSModulesDisable';
 
 import { initializeStore } from '@app/domain/store/store';
 

@@ -11,10 +11,6 @@
 /* text mixins */
 @define-mixin body-text {
   font: var(--body-text);
-
-  @media (--xxxlargeUp) {
-    font-size: 18px;
-  }
 }
 
 :root {
@@ -24,4 +20,10 @@
 
   /* fonts */
   --body-text: 14px / 26px var(--fontFamily);
+}
+
+@media (--mediumDown) {
+  :root {
+    --body-text: 12px / 20px var(--fontFamily);
+  }
 }

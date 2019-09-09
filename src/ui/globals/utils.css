@@ -1,9 +1,11 @@
 @define-mixin button-reset {
-  padding: 0;
-  line-height: 1;
-  cursor: pointer;
-  background-color: transparent;
-  border: none;
+  @media (--mediumUp) {
+    padding: 0;
+    line-height: 1;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+  }
 }
 
 @define-mixin highlight-off {

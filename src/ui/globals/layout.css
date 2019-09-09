@@ -1,3 +1,16 @@
+:root {
+  --content-bottom-offset: 48px;
+  --content-side-offset: 24px;
+  --content-top-offset: 32px;
+  @media (--mediumDown) {
+    & {
+      --content-top-offset: 16px;
+      --content-bottom-offset: 40px;
+      --content-side-offset: 12px;
+    }
+  }
+}
+
 *,
 *::before,
 *::after {
@@ -22,4 +35,9 @@ input[type='submit'],
 .input-checkbox {
   -webkit-appearance: none;
   border-radius: 0;
+}
+
+@define-mixin content-side-offset {
+  padding-right: var(--content-side-offset);
+  padding-left: var(--content-side-offset);
 }

@@ -1,0 +1,8 @@
+.landing {
+  color: var(--color-primary);
+  @mixin content-side-offset;
+}
+
+.button {
+  @mixin button-reset;
+}
