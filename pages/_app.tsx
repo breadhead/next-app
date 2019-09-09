@@ -11,8 +11,9 @@ import { getSnapshot } from 'mobx-state-tree';
 import App from 'next/app';
 import React from 'react';
 
-import { IStore, initializeStore } from '@app/domain/store/store';
+import { IStore, initializeStore } from '@app/domain/store/root';
 import { canUseDOM } from '@app/lib/CanUseDom';
+import { storeContext } from '@app/domain/store/storeContext';
 
 interface IOwnProps {
   isServer: boolean;
@@ -53,9 +54,9 @@ class MyApp extends App<IOwnProps> {
   public render() {
     const { Component, pageProps } = this.props;
     return (
-      <Provider store={this.store}>
+      <storeContext.Provider value={this.store}>
         <Component {...pageProps} />
-      </Provider>
+      </storeContext.Provider>
     );
   }
 }
