@@ -1,40 +1,53 @@
-import { action, observable } from 'mobx';
-import { useStaticRendering } from 'mobx-react';
+import {
+  applySnapshot,
+  Instance,
+  SnapshotIn,
+  SnapshotOut,
+  types,
+} from 'mobx-state-tree';
 
-const isServer = typeof window === 'undefined';
-useStaticRendering(isServer);
+let store: IStore = null as any;
 
-class Store {
-  @observable lastUpdate = 0;
-  @observable light = false;
+const Store = types
+  .model({
+    foo: types.number,
+    lastUpdate: types.Date,
+    light: false,
+  })
+  .actions(self => {
+    let timer: NodeJS.Timer;
+    const start = () => {
+      timer = setInterval(() => {
+        // mobx-state-tree doesn't allow anonymous callbacks changing data.
+        // Pass off to another action instead (need to cast self as any
+        // because typescript doesn't yet know about the actions we're
+        // adding to self here)
+        (self as any).update();
+      }, 1000);
+    };
+    const update = () => {
+      self.lastUpdate = new Date(Date.now());
+      self.light = true;
+    };
+    const stop = () => {
+      clearInterval(timer);
+    };
+    return { start, stop, update };
+  });
 
-  timer?: number;
+export type IStore = Instance<typeof Store>;
+export type IStoreSnapshotIn = SnapshotIn<typeof Store>;
+export type IStoreSnapshotOut = SnapshotOut<typeof Store>;
 
-  constructor(_: boolean, initialData: any = {}) {
-    this.lastUpdate =
-      initialData.lastUpdate != null ? initialData.lastUpdate : Date.now();
-    this.light = !!initialData.light;
-  }
-
-  @action start = () => {
-    this.timer = (setInterval(() => {
-      this.lastUpdate = Date.now();
-      this.light = true;
-    }, 1000) as unknown) as number;
-  };
-
-  stop = () => clearInterval(this.timer);
-}
-
-let store: Store;
-
-export function initializeStore(initialData?: any) {
-  // Always make a new store if server, otherwise state is shared between requests
+export const initializeStore = (isServer: boolean, snapshot = null) => {
   if (isServer) {
-    return new Store(isServer, initialData);
+    store = Store.create({ foo: 6, lastUpdate: Date.now(), light: false });
   }
-  if (!store) {
-    store = new Store(isServer, initialData);
+  if ((store as any) === null) {
+    store = Store.create({ foo: 6, lastUpdate: Date.now(), light: false });
+  }
+  if (snapshot) {
+    applySnapshot(store, snapshot);
   }
   return store;
-}
+};

@@ -1,8 +1,4 @@
-import { Provider } from 'mobx-react';
-import App, { Container } from 'next/app';
-import React from 'react';
 import 'reset-css';
-
 /* order is important because of mixins */
 import '@app/ui/globals/queries.css?CSSModulesDisable';
 import '@app/ui/globals/colors.css?CSSModulesDisable';
@@ -10,43 +6,58 @@ import '@app/ui/globals/fonts.css?CSSModulesDisable';
 import '@app/ui/globals/utils.css?CSSModulesDisable';
 import '@app/ui/globals/layout.css?CSSModulesDisable';
 
-import { initializeStore } from '@app/domain/store/store';
+import { Provider } from 'mobx-react';
+import { getSnapshot } from 'mobx-state-tree';
+import App from 'next/app';
+import React from 'react';
 
-class MyMobxApp extends App {
-  static async getInitialProps(appContext: any) {
-    // Get or Create the store with `undefined` as initialState
-    // This allows you to set a custom default initialState
-    const mobxStore = initializeStore();
-    // Provide the store to getInitialProps of pages
-    appContext.ctx.mobxStore = mobxStore;
+import { IStore, initializeStore } from '@app/domain/store/store';
+import { canUseDOM } from '@app/lib/CanUseDom';
 
-    const appProps = await App.getInitialProps(appContext);
+interface IOwnProps {
+  isServer: boolean;
+  initialState: IStore;
+}
 
+class MyApp extends App<IOwnProps> {
+  public static async getInitialProps({ Component, ctx }: any) {
+    //
+    // Use getInitialProps as a step in the lifecycle when
+    // we can initialize our store
+    //
+    const isServer = !canUseDOM();
+    const store = initializeStore(isServer);
+    //
+    // Check whether the page being rendered by the App has a
+    // static getInitialProps method and if so call it
+    //
+    let pageProps = {};
+    if (Component.getInitialProps) {
+      pageProps = await Component.getInitialProps(ctx);
+    }
     return {
-      ...appProps,
-      initialMobxState: mobxStore,
+      initialState: getSnapshot(store),
+      isServer,
+      pageProps,
     };
   }
 
+  private store: IStore;
+
   constructor(props: any) {
     super(props);
-    const isServer = typeof window === 'undefined';
-    this.mobxStore = isServer
-      ? props.initialMobxState
-      : initializeStore(props.initialMobxState);
+
+    this.store = initializeStore(props.isServer, props.initialState) as IStore;
   }
 
-  mobxStore: any;
-
-  render() {
+  public render() {
     const { Component, pageProps } = this.props;
     return (
-      <Container>
-        <Provider store={this.mobxStore}>
-          <Component {...pageProps} />
-        </Provider>
-      </Container>
+      <Provider store={this.store}>
+        <Component {...pageProps} />
+      </Provider>
     );
   }
 }
-export default MyMobxApp;
+
+export default MyApp;
