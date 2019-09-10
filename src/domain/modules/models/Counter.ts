@@ -1,4 +1,5 @@
 import { types, flow } from 'mobx-state-tree';
+
 import { getEnv } from '@app/domain/modules/infrastructure/getEnv';
 
 export const CounterStore = types
