@@ -1,3 +1,3 @@
-import { AxiosInstance } from 'axios'
+import { AxiosInstance } from 'axios';
 
-export type Env = { api: AxiosInstance }
+export type Env = { api: AxiosInstance };

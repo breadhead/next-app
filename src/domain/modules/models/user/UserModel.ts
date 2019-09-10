@@ -1,7 +1,7 @@
-import { Instance, SnapshotIn, SnapshotOut, types } from 'mobx-state-tree'
-import { IStore } from '../Root'
-import { CustomOption } from '@app/lib/customOption'
-import { Option } from 'tsoption'
+import { Instance, SnapshotIn, SnapshotOut, types } from 'mobx-state-tree';
+import { IStore } from '../Root';
+import { CustomOption } from '@app/lib/customOption';
+import { Option } from 'tsoption';
 
 export const UserStore = types
   .model('user', {
@@ -10,12 +10,12 @@ export const UserStore = types
   .actions(self => {
     return {
       setToken(token: string) {
-        self.token = CustomOption.create(token)
-        console.log(self)
+        self.token = CustomOption.create(token);
+        console.log(self);
       },
-    }
-  })
+    };
+  });
 
-export type IStore = Instance<typeof UserStore>
-export type IStoreSnapshotIn = SnapshotIn<typeof UserStore>
-export type IStoreSnapshotOut = SnapshotOut<typeof UserStore>
+export type IStore = Instance<typeof UserStore>;
+export type IStoreSnapshotIn = SnapshotIn<typeof UserStore>;
+export type IStoreSnapshotOut = SnapshotOut<typeof UserStore>;

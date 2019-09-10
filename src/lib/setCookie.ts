@@ -1,4 +1,4 @@
-import Cookies from 'js-cookie'
+import Cookies from 'js-cookie';
 
 export const setCookie = (token: string) =>
-  Cookies.set('token', token, { expires: 7 })
+  Cookies.set('token', token, { expires: 7 });

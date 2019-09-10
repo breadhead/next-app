@@ -1,5 +1,5 @@
-import { types, flow } from 'mobx-state-tree'
-import { getEnv } from '@app/domain/modules/infrastructure/getEnv'
+import { types, flow } from 'mobx-state-tree';
+import { getEnv } from '@app/domain/modules/infrastructure/getEnv';
 
 export const CounterStore = types
   .model('counter', {
@@ -8,18 +8,18 @@ export const CounterStore = types
   })
   .views(self => ({
     get counterValue() {
-      return self.counter
+      return self.counter;
     },
   }))
   .actions(self => {
     return {
       increment() {
-        self.counter++
+        self.counter++;
       },
       fetch: flow(function* fetch() {
-        const result = yield getEnv(self).api.get('/users')
+        const result = yield getEnv(self).api.get('/users');
 
-        return result
+        return result;
       }),
-    }
-  })
+    };
+  });
