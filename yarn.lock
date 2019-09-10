@@ -1019,11 +1019,10 @@
     "@babel/helper-plugin-utils" "^7.0.0"
 
 "@babel/plugin-transform-typescript@^7.3.2":
-  version "7.5.2"
-  resolved "https://registry.yarnpkg.com/@babel/plugin-transform-typescript/-/plugin-transform-typescript-7.5.2.tgz#ea7da440d29b8ccdb1bd02e18f6cfdc7ce6c16f5"
-  integrity sha512-r4zJOMbKY5puETm8+cIpaa0RQZG/sSASW1u0pj8qYklcERgVIbxVbP2wyJA7zI1//h7lEagQmXi9IL9iI5rfsA==
+  version "7.4.0"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-transform-typescript/-/plugin-transform-typescript-7.4.0.tgz#0389ec53a34e80f99f708c4ca311181449a68eb1"
+  integrity sha512-U7/+zKnRZg04ggM/Bm+xmu2B/PrwyDQTT/V89FXWYWNMxBDwSx56u6jtk9SEbfLFbZaEI72L+5LPvQjeZgFCrQ==
   dependencies:
-    "@babel/helper-create-class-features-plugin" "^7.5.0"
     "@babel/helper-plugin-utils" "^7.0.0"
     "@babel/plugin-syntax-typescript" "^7.2.0"
 
