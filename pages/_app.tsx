@@ -1,24 +1,20 @@
+import { canUseDOM } from '@app/lib/CanUseDom';
+import { CustomOption } from '@app/lib/customOption';
+import { initializeApp } from '@app/lib/initializeApp';
+import { storeContext } from '@app/lib/storeContext';
+import { initializeStore } from '@app/models/root/initializeStore';
+import { IStore } from '@app/models/root/Root';
 import '@app/ui/globals/colors.css?CSSModulesDisable';
 import '@app/ui/globals/fonts.css?CSSModulesDisable';
 import '@app/ui/globals/layout.css?CSSModulesDisable';
 import '@app/ui/globals/queries.css?CSSModulesDisable';
 /* order is important because of mixins */
 import '@app/ui/globals/utils.css?CSSModulesDisable';
-import { get } from 'lodash';
 import { getSnapshot } from 'mobx-state-tree';
 import App from 'next/app';
 import { AppContext, AppProps } from 'next/dist/pages/_app';
 import React from 'react';
 import 'reset-css';
-import { Option } from 'tsoption';
-
-import { canUseDOM } from '@app/lib/CanUseDom';
-import { CustomOption } from '@app/lib/customOption';
-import NextI18Next from '@app/lib/i18n/i18n';
-import { storeContext } from '@app/lib/storeContext';
-import { initializeStore } from '@app/models/root/initializeStore';
-import { IStore } from '@app/models/root/Root';
-import { initializeToken } from '@app/models/user/initializeToken';
 
 interface IOwnProps {
   isServer: boolean;
@@ -26,18 +22,9 @@ interface IOwnProps {
 }
 
 class MyApp extends App<AppProps<IOwnProps>> {
-  public static async getInitialProps({ Component, ctx, router }: AppContext) {
-    const isServer = !canUseDOM();
-    const token = get(ctx, 'req.cookies.token') as string | undefined;
-
-    const store = initializeStore({
-      isServer,
-      snapshot: null,
-      token: Option.of(token),
-    });
-    (ctx as any).store = store;
-
-    initializeToken(ctx);
+  public static async getInitialProps({ Component, ctx }: AppContext) {
+    /* initialize store on server */
+    const store = initializeApp(ctx);
 
     let pageProps = {};
     if (Component.getInitialProps) {
@@ -45,7 +32,7 @@ class MyApp extends App<AppProps<IOwnProps>> {
     }
     return {
       initialState: getSnapshot(store),
-      isServer,
+      isServer: !canUseDOM(),
       pageProps,
     };
   }
@@ -55,6 +42,7 @@ class MyApp extends App<AppProps<IOwnProps>> {
   constructor(props: any) {
     super(props);
 
+    /* initialize store from snapshots */
     this.store = initializeStore({
       isServer: props.isServer,
       snapshot: props.initialState,

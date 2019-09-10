@@ -11,7 +11,7 @@ export const UserStore = types
   })
   .actions(self => {
     return {
-      setToken(token: Option<any>) {
+      setToken(token: Option<string>) {
         self.token = token;
       },
     };
