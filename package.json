@@ -55,6 +55,7 @@
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "reset-css": "^4.0.1",
+    "serializr": "^1.5.1",
     "tsoption": "^0.7.0"
   },
   "devDependencies": {

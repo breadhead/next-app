@@ -14,7 +14,7 @@ export const CounterStore = types
   .actions(self => {
     return {
       increment() {
-        ;(self as any).counter++
+        self.counter++
       },
       fetch: flow(function* fetch() {
         const result = yield getEnv(self).api.get('/users')

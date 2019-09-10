@@ -19,6 +19,7 @@ import { initializeStore } from '@app/domain/modules/infrastructure/initializeSt
 import { AppPropsType } from 'next-server/dist/lib/utils'
 import { NextRouter } from 'next/router'
 import { initializeToken } from '@app/domain/modules/models/user/UserService'
+import { Option } from 'tsoption'
 
 interface IOwnProps {
   isServer: boolean
@@ -33,7 +34,7 @@ class MyApp extends App<AppProps<IOwnProps>> {
     //
     const isServer = !canUseDOM()
     const token = get(ctx, 'req.cookies.token') as string | undefined
-    const store = initializeStore(isServer)
+    const store = initializeStore(isServer, null, Option.of(token))
     ;(ctx as any).store = store
     initializeToken(ctx)
 
