@@ -8,6 +8,8 @@ import s from './Landing.css';
 export const LandingPage = observer(() => {
   const store = useStore();
 
+  console.log(store.user.token);
+
   const onButtonClick = React.useCallback(() => {
     store.book.increment();
     store.book.fetch();

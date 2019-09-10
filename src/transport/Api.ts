@@ -7,9 +7,9 @@ import { canUseDOM } from '@app/lib/CanUseDom';
 const { publicRuntimeConfig } = getConfig();
 const { backUrl, backUrlServer } = publicRuntimeConfig;
 
-export const initializeApiClient = (token: Option<any>) => {
+export const initializeApiClient = (token: Option<string>) => {
   const authHeaders = !!token.nonEmpty()
-    ? { Authorization: `Bearer ${token.get().value}` }
+    ? { Authorization: `Bearer ${token.get()}` }
     : {};
   const realBackUrl = canUseDOM() ? backUrl : backUrlServer;
 

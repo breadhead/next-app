@@ -1,5 +1,5 @@
 import { types } from 'mobx-state-tree';
-import { Option, Some, None } from 'tsoption';
+import { Option } from 'tsoption';
 
 type OptionReturnType<T = any> = Option<T>;
 const OPTION_MARK = '__OPTION_MARK__';
