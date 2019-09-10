@@ -1,11 +1,15 @@
-import { useRouter } from 'next/router';
-import React from 'react';
+import { useRouter } from 'next/router'
+import React from 'react'
+import { useStore } from '@app/domain/modules/infrastructure/storeContext'
+import { observer } from 'mobx-react'
 
-const Post = () => {
-  const router = useRouter();
-  const { id } = router.query;
+const Post = observer(() => {
+  const router = useRouter()
+  const store = useStore()
 
-  return <p>Post: {id}</p>;
-};
+  const { id } = router.query
 
-export default Post;
+  return <p>Post: {id}</p>
+})
+
+export default Post

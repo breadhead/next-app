@@ -6,7 +6,7 @@ import '@app/ui/globals/fonts.css?CSSModulesDisable'
 import '@app/ui/globals/utils.css?CSSModulesDisable'
 import '@app/ui/globals/layout.css?CSSModulesDisable'
 
-import { Provider } from 'mobx-react'
+import { Provider, observer } from 'mobx-react'
 import { getSnapshot } from 'mobx-state-tree'
 import App from 'next/app'
 import { AppContext, AppProps } from 'next/dist/pages/_app'
@@ -22,6 +22,7 @@ import { Option } from 'tsoption'
 import { CustomOption } from '@app/lib/customOption'
 import { initializeToken } from '@app/domain/modules/models/user/initializeToken'
 import { BaseRouter } from 'next-server/dist/lib/router/router'
+import Router from 'next/router'
 
 interface IOwnProps {
   isServer: boolean
@@ -51,6 +52,7 @@ class MyApp extends App<AppProps<IOwnProps>> {
       history,
     })
     ;(ctx as any).store = store
+
     initializeToken(ctx)
     //
     // Check whether the page being rendered by the App has a
@@ -79,6 +81,17 @@ class MyApp extends App<AppProps<IOwnProps>> {
       token: CustomOption.create(props.initialState.user.token),
       history: props.history,
     }) as IStore
+  }
+
+  componentDidMount() {
+    Router.events.on('routeChangeComplete', () => {
+      this.store.history.update({
+        route: Router.route,
+        pathname: Router.pathname,
+        asPath: Router.asPath,
+        query: Router.query,
+      })
+    })
   }
 
   public render() {

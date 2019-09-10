@@ -19,7 +19,7 @@ const storeFactory = ({ token, history }: StoreFactoryProps) =>
     {
       book: { value: '', counter: 234 },
       user: { token },
-      router: history,
+      history: history,
     },
     { api: initializeApiClient(token) },
   )

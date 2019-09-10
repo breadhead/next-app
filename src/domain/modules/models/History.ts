@@ -1,8 +1,8 @@
 import { Instance, SnapshotIn, SnapshotOut, types } from 'mobx-state-tree'
 import { BaseRouter } from 'next-server/dist/lib/router/router'
 
-export const RouterStore = types
-  .model('router', {
+export const HistoryStore = types
+  .model('history', {
     route: types.string,
     pathname: types.string,
     query: types.frozen(),
@@ -10,7 +10,7 @@ export const RouterStore = types
   })
   .actions(self => {
     return {
-      unit(baseRouter: BaseRouter) {
+      update(baseRouter: BaseRouter) {
         self.route = baseRouter.route
         self.pathname = baseRouter.pathname
         self.asPath = baseRouter.asPath
@@ -18,5 +18,3 @@ export const RouterStore = types
       },
     }
   })
-
-export default undefined
