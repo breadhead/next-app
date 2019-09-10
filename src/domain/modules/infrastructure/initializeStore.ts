@@ -1,25 +1,20 @@
-import axios from 'axios'
-import { get } from 'lodash'
 import makeInspectable from 'mobx-devtools-mst'
 import { applySnapshot } from 'mobx-state-tree'
-import { RootStore, IStore } from '../models/Root'
-import { initializeApiClient } from '../models/Api'
-import { Option } from 'tsoption'
-import { CustomOption } from '@app/lib/customOption'
 import { BaseRouter } from 'next-server/dist/lib/router/router'
+import { Option } from 'tsoption'
+import { initializeApiClient } from '../models/Api'
+import { IStore, RootStore } from '../models/Root'
 
 let store: IStore = null as any
 
 export interface StoreFactoryProps {
   token: Option<string>
-  history: BaseRouter
 }
-const storeFactory = ({ token, history }: StoreFactoryProps) =>
+const storeFactory = ({ token }: StoreFactoryProps) =>
   RootStore.create(
     {
       book: { value: '', counter: 234 },
       user: { token },
-      history: history,
     },
     { api: initializeApiClient(token) },
   )
@@ -28,13 +23,12 @@ export const initializeStore = ({
   isServer,
   snapshot,
   token,
-  history,
 }: InitializeStoreProps) => {
   if (isServer) {
-    store = storeFactory({ token, history })
+    store = storeFactory({ token })
   }
   if ((store as IStore) === null) {
-    store = storeFactory({ token, history })
+    store = storeFactory({ token })
   }
   if (snapshot) {
     applySnapshot(store, snapshot)
@@ -48,5 +42,4 @@ export interface InitializeStoreProps {
   isServer: boolean
   snapshot: any
   token: Option<string>
-  history: BaseRouter
 }

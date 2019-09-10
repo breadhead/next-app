@@ -5,7 +5,6 @@ import { observer } from 'mobx-react'
 
 const Post = observer(() => {
   const router = useRouter()
-  const store = useStore()
 
   const { id } = router.query
 

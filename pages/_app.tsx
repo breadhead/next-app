@@ -1,28 +1,22 @@
-import 'reset-css'
-/* order is important because of mixins */
-import '@app/ui/globals/queries.css?CSSModulesDisable'
+import { initializeStore } from '@app/domain/modules/infrastructure/initializeStore'
+import { storeContext } from '@app/domain/modules/infrastructure/storeContext'
+import { IStore } from '@app/domain/modules/models/Root'
+import { initializeToken } from '@app/domain/modules/models/user/initializeToken'
+import { canUseDOM } from '@app/lib/CanUseDom'
+import { CustomOption } from '@app/lib/customOption'
 import '@app/ui/globals/colors.css?CSSModulesDisable'
 import '@app/ui/globals/fonts.css?CSSModulesDisable'
-import '@app/ui/globals/utils.css?CSSModulesDisable'
 import '@app/ui/globals/layout.css?CSSModulesDisable'
-
-import { Provider, observer } from 'mobx-react'
+import '@app/ui/globals/queries.css?CSSModulesDisable'
+/* order is important because of mixins */
+import '@app/ui/globals/utils.css?CSSModulesDisable'
+import { get } from 'lodash'
 import { getSnapshot } from 'mobx-state-tree'
 import App from 'next/app'
 import { AppContext, AppProps } from 'next/dist/pages/_app'
 import React from 'react'
-import { get } from 'lodash'
-import { IStore } from '@app/domain/modules/models/Root'
-import { storeContext } from '@app/domain/modules/infrastructure/storeContext'
-import { canUseDOM } from '@app/lib/CanUseDom'
-import { initializeStore } from '@app/domain/modules/infrastructure/initializeStore'
-import { AppPropsType } from 'next-server/dist/lib/utils'
-import { NextRouter } from 'next/router'
+import 'reset-css'
 import { Option } from 'tsoption'
-import { CustomOption } from '@app/lib/customOption'
-import { initializeToken } from '@app/domain/modules/models/user/initializeToken'
-import { BaseRouter } from 'next-server/dist/lib/router/router'
-import Router from 'next/router'
 
 interface IOwnProps {
   isServer: boolean
@@ -38,18 +32,11 @@ class MyApp extends App<AppProps<IOwnProps>> {
 
     const isServer = !canUseDOM()
     const token = get(ctx, 'req.cookies.token') as string | undefined
-    const history: BaseRouter = {
-      route: router.route,
-      pathname: router.pathname,
-      query: router.query,
-      asPath: router.asPath,
-    }
 
     const store = initializeStore({
       isServer,
       snapshot: null,
       token: Option.of(token),
-      history,
     })
     ;(ctx as any).store = store
 
@@ -66,7 +53,6 @@ class MyApp extends App<AppProps<IOwnProps>> {
       initialState: getSnapshot(store),
       isServer,
       pageProps,
-      history,
     }
   }
 
@@ -79,19 +65,7 @@ class MyApp extends App<AppProps<IOwnProps>> {
       isServer: props.isServer,
       snapshot: props.initialState,
       token: CustomOption.create(props.initialState.user.token),
-      history: props.history,
     }) as IStore
-  }
-
-  componentDidMount() {
-    Router.events.on('routeChangeComplete', () => {
-      this.store.history.update({
-        route: Router.route,
-        pathname: Router.pathname,
-        asPath: Router.asPath,
-        query: Router.query,
-      })
-    })
   }
 
   public render() {
