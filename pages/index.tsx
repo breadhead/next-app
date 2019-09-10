@@ -1,13 +1,15 @@
-import * as React from 'react'
+import Link from 'next/link';
+import * as React from 'react';
 
-import { LandingPage } from '@app/features/landing'
-import { Link } from '@app/features/routing'
+import { LandingPage } from '@app/features/landing';
 
 const Index = () => (
-  <>
+  <div>
+    <Link href="/post/[id]" as="/post/1">
+      <a>Таймер</a>
+    </Link>
     <LandingPage />
-    <Link route="/time">Таймер</Link>
-  </>
-)
+  </div>
+);
 
-export default Index
+export default Index;

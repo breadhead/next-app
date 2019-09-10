@@ -1,1 +1,1 @@
-export { LandingPage } from './Landing'
+export { LandingPage } from './Landing';

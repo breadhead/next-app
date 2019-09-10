@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,500,600,700&subset=cyrillic&font-display=block');
+
+/* @font-face {
+  font-family: 'RFDewi-Regular';
+  font-style: normal;
+  font-display: block;
+  font-weight: 400;
+  src: url('/static/fonts/RFDewi-Regular.otf') format('opentype');
+} */
+
+/* text mixins */
+@define-mixin body-text {
+  font: var(--body-text);
+}
+
+:root {
+  --fontFamily: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
+  -webkit-font-smoothing: antialiased;
+
+  /* fonts */
+  --body-text: 14px / 26px var(--fontFamily);
+}
+
+@media (--mediumDown) {
+  :root {
+    --body-text: 12px / 20px var(--fontFamily);
+  }
+}

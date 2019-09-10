@@ -1,6 +1,18 @@
 {
   "plugins": [
     [
+      "@babel/plugin-proposal-decorators",
+      {
+        "legacy": true
+      }
+    ],
+    [
+      "@babel/plugin-proposal-class-properties",
+      {
+        "loose": true
+      }
+    ],
+    [
       "module-resolver",
       {
         "root": ["./"],
@@ -12,19 +24,13 @@
   ],
   "env": {
     "development": {
-      "presets": [
-        "next/babel",
-        "@zeit/next-typescript/babel"
-      ]
+      "presets": ["next/babel"]
     },
     "production": {
-      "presets": [
-        "next/babel",
-        "@zeit/next-typescript/babel"
-      ]
+      "presets": ["next/babel"]
     },
     "test": {
-      "presets": ["@babel/preset-env", "@babel/preset-react", "@babel/preset-typescript"]
+      "presets": [["next/babel", { "preset-env": { "modules": "commonjs" } }]]
     }
   }
 }
