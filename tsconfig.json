@@ -12,7 +12,7 @@
     "allowJs": true,
     "noUnusedParameters": true,
     "noUnusedLocals": true,
-    "noEmit": true,
+    "noEmit": false,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
@@ -28,6 +28,6 @@
       "*": ["types/*"]
     }
   },
-  "exclude": ["dist", ".next", "out", "next.config.js"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/lib/i18n/i18n.js"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/lib/i18n/i18n.js"],
+  "exclude": ["cosmos", "dist", ".next", "out", "next.config.js"]
 }
