@@ -4,6 +4,7 @@ import { initializeApp } from '@app/lib/initializeApp';
 import { storeContext } from '@app/lib/storeContext';
 import { initializeStore } from '@app/models/root/initializeStore';
 import { IStore } from '@app/models/root/Root';
+
 import '@app/ui/globals/colors.css?CSSModulesDisable';
 import '@app/ui/globals/fonts.css?CSSModulesDisable';
 import '@app/ui/globals/layout.css?CSSModulesDisable';
