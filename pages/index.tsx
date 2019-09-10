@@ -1,7 +1,7 @@
-import Link from 'next/link'
-import * as React from 'react'
+import Link from 'next/link';
+import * as React from 'react';
 
-import { LandingPage } from '@app/features/landing'
+import { LandingPage } from '@app/features/landing';
 
 const Index = () => (
   <div>
@@ -10,6 +10,6 @@ const Index = () => (
     </Link>
     <LandingPage />
   </div>
-)
+);
 
-export default Index
+export default Index;

@@ -1,6 +1,6 @@
 import { Option } from 'tsoption';
 
-import { IStore } from '../Root';
+import { IStore } from '../root/Root';
 
 export const initializeToken = async (ctx: any) => {
   const token = Option.of(ctx)

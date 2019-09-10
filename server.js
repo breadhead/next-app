@@ -5,7 +5,7 @@ const args = require('args-parser')(process.argv);
 const cookieParser = require('cookie-parser');
 const nextI18NextMiddleware = require('next-i18next/middleware').default;
 
-const nextI18next = require('./src/features/i18n/i18n');
+const nextI18next = require('./src/lib/i18n/i18n');
 
 const FALLBACK_PORT = 3001;
 const PORT = args.p || FALLBACK_PORT;

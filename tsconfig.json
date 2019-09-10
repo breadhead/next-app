@@ -26,10 +26,5 @@
     }
   },
   "exclude": ["dist", ".next", "out", "next.config.js"],
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "src/features/i18n/i18n.js"
-  ]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/lib/i18n/i18n.js"]
 }

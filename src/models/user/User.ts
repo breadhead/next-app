@@ -3,7 +3,7 @@ import { Option } from 'tsoption';
 
 import { CustomOption } from '@app/lib/customOption';
 
-import { IStore } from '../Root';
+import { IStore } from '../root/Root';
 
 export const UserStore = types
   .model('user', {

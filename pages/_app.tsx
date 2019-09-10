@@ -12,13 +12,13 @@ import React from 'react';
 import 'reset-css';
 import { Option } from 'tsoption';
 
-import { initializeStore } from '@app/domain/modules/infrastructure/initializeStore';
-import { storeContext } from '@app/domain/modules/infrastructure/storeContext';
-import { IStore } from '@app/domain/modules/models/Root';
-import { initializeToken } from '@app/domain/modules/models/user/initializeToken';
-import NextI18Next from '@app/features/i18n/i18n';
 import { canUseDOM } from '@app/lib/CanUseDom';
 import { CustomOption } from '@app/lib/customOption';
+import NextI18Next from '@app/lib/i18n/i18n';
+import { storeContext } from '@app/lib/storeContext';
+import { initializeStore } from '@app/models/root/initializeStore';
+import { IStore } from '@app/models/root/Root';
+import { initializeToken } from '@app/models/user/initializeToken';
 
 interface IOwnProps {
   isServer: boolean;
@@ -27,11 +27,6 @@ interface IOwnProps {
 
 class MyApp extends App<AppProps<IOwnProps>> {
   public static async getInitialProps({ Component, ctx, router }: AppContext) {
-    //
-    // Use getInitialProps as a step in the lifecycle when
-    // we can initialize our store
-    //
-
     const isServer = !canUseDOM();
     const token = get(ctx, 'req.cookies.token') as string | undefined;
 
@@ -43,10 +38,7 @@ class MyApp extends App<AppProps<IOwnProps>> {
     (ctx as any).store = store;
 
     initializeToken(ctx);
-    //
-    // Check whether the page being rendered by the App has a
-    // static getInitialProps method and if so call it
-    //
+
     let pageProps = {};
     if (Component.getInitialProps) {
       pageProps = await Component.getInitialProps(ctx);
