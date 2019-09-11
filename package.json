@@ -70,7 +70,7 @@
     "@babel/preset-env": "^7.6.0",
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "^7.6.0",
-    "@commitlint/cli": "^7.2.1",
+    "@commitlint/cli": "^8.1.0",
     "@solid-soda/scripts": "^1.14.5",
     "@storybook/addon-actions": "^5.1.11",
     "@storybook/addon-links": "^5.1.11",
