@@ -2,8 +2,10 @@ import makeInspectable from 'mobx-devtools-mst';
 import { applySnapshot } from 'mobx-state-tree';
 import { Option } from 'tsoption';
 
-import { initializeApiClient } from '../../transport/Api';
-import { IStore, RootStore } from './Root';
+import { InitialStateRoot } from '@app/stores/root/initialState';
+import { IStore, RootStore } from '@app/stores/root/Root';
+
+import { initializeApiClient } from './initializeApiClient';
 
 let store: IStore = null as any;
 
@@ -13,8 +15,7 @@ export interface StoreFactoryProps {
 const storeFactory = ({ token }: StoreFactoryProps) =>
   RootStore.create(
     {
-      book: { value: '', counter: 234 },
-      user: { token },
+      ...InitialStateRoot,
     },
     { api: initializeApiClient(token) },
   );
@@ -40,6 +41,6 @@ export const initializeStore = ({
 
 export interface InitializeStoreProps {
   isServer: boolean;
-  snapshot: any;
   token: Option<string>;
+  snapshot?: any;
 }

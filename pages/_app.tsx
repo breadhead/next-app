@@ -1,9 +1,5 @@
 import { canUseDOM } from '@app/lib/CanUseDom';
 import { CustomOption } from '@app/lib/customOption';
-import { initializeApp } from '@app/lib/initializeApp';
-import { storeContext } from '@app/lib/storeContext';
-import { initializeStore } from '@app/models/root/initializeStore';
-import { IStore } from '@app/models/root/Root';
 
 import '@app/ui/globals/colors.css?CSSModulesDisable';
 import '@app/ui/globals/fonts.css?CSSModulesDisable';
@@ -16,6 +12,11 @@ import App from 'next/app';
 import { AppContext, AppProps } from 'next/dist/pages/_app';
 import React from 'react';
 import 'reset-css';
+import { initializeApp } from '@app/initialize/initializeApp';
+import { IStore } from '@app/stores/root/Root';
+import { initializeStore } from '@app/initialize/initializeStore';
+import { storeContext } from '@app/stores/root/helpers/storeContext';
+import { Some } from 'tsoption';
 
 interface IOwnProps {
   isServer: boolean;
@@ -47,7 +48,7 @@ class MyApp extends App<AppProps<IOwnProps>> {
     this.store = initializeStore({
       isServer: props.isServer,
       snapshot: props.initialState,
-      token: CustomOption.create(props.initialState.user.token),
+      token: new Some(' '),
     }) as IStore;
   }
 

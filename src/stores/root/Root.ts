@@ -1,11 +1,9 @@
 import { Instance, SnapshotIn, SnapshotOut, types } from 'mobx-state-tree';
 
-import { CounterStore } from '../counter/Counter';
-import { UserStore } from '../user/User';
+import { CounterStore } from '../counter';
 
 export const RootStore = types.model('root', {
-  book: CounterStore,
-  user: UserStore,
+  counter: CounterStore,
 });
 
 export type IStore = Instance<typeof RootStore>;

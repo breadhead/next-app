@@ -61,7 +61,9 @@
     "recompose": "^0.30.0",
     "reset-css": "^4.0.1",
     "serializr": "^1.5.1",
-    "tsoption": "^0.7.0"
+    "styled-components": "^4.4.0",
+    "tsoption": "^0.7.0",
+    "utility-types": "^3.8.0"
   },
   "devDependencies": {
     "@babel/core": "^7.6.0",
@@ -84,12 +86,14 @@
     "@types/recompose": "^0.30.7",
     "@types/storybook__addon-actions": "^3.4.3",
     "@types/storybook__react": "^4.0.2",
+    "@types/styled-system": "^5.1.2",
     "@typescript-eslint/eslint-plugin": "^2.1.0",
     "@typescript-eslint/parser": "^2.1.0",
     "awesome-typescript-loader": "^5.2.1",
     "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
     "babel-plugin-module-resolver": "^3.2.0",
+    "babel-plugin-styled-components": "^1.10.6",
     "cross-env": "^5.2.1",
     "cz-customizable": "^5.3.0",
     "jest": "^24.9.0",

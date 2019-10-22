@@ -10,8 +10,9 @@
     "experimentalDecorators": true,
     "strict": true,
     "allowJs": true,
-    "noUnusedParameters": true,
-    "noUnusedLocals": true,
+    "noImplicitAny": false,
+    "noUnusedParameters": false,
+    "noUnusedLocals": false,
     "noEmit": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
@@ -28,6 +29,6 @@
       "*": ["types/*"]
     }
   },
-  "exclude": ["dist", ".next", "out", "next.config.js"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/lib/i18n/i18n.js"]
+  "exclude": ["dist", ".next", "out", "next.config.js", "node_modules"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
 }

@@ -1,6 +1,6 @@
 import { createContext, useContext } from 'react';
 
-import { IStore } from '../models/root/Root';
+import { IStore } from '../Root';
 
 export const storeContext = createContext<IStore | null>(null);
 

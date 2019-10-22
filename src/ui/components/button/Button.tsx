@@ -2,10 +2,10 @@ import cx from 'classnames';
 import React from 'react';
 
 import styles from './Button.css';
+import { ButtonKind } from './ButtonKind';
 import { ButtonProps } from './ButtonProps';
 import { getButtonType } from './helpers/getButtonType';
 import { getKindClassName } from './helpers/getKindClassName.ts';
-import { ButtonKind } from './ButtonKind';
 
 export const Button = ({
   children,
