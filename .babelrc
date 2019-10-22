@@ -20,6 +20,12 @@
           "@app": "./src"
         }
       }
+    ],
+    [
+      "styled-components",
+      {
+        "ssr": true
+      }
     ]
   ],
   "env": {
