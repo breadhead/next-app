@@ -88,7 +88,7 @@
     "@types/storybook__react": "^4.0.2",
     "@types/styled-system": "^5.1.2",
     "@typescript-eslint/eslint-plugin": "^2.1.0",
-    "@typescript-eslint/parser": "^2.1.0",
+    "@typescript-eslint/parser": "^2.19.0",
     "awesome-typescript-loader": "^5.2.1",
     "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
