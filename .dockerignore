@@ -1,0 +1,9 @@
+.circleci
+.jest
+.next
+node_modules
+out
+.stylelint
+jest.config.js
+README.md
+tslint.json

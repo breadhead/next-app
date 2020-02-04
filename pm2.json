@@ -1,0 +1,8 @@
+{
+  "name": "danilovsky-web",
+  "script": "server/index.js",
+  "instances": "max",
+  "env_production": {
+    "NODE_ENV": "production"
+  }
+}

@@ -1,0 +1,12 @@
+.env
+node_modules
+blueprint-templates
+.next
+out
+*.log
+*.css.d.ts
+.vscode
+.storyout
+dist
+.idea
+.DS_Store

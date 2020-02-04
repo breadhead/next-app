@@ -1,0 +1,11 @@
+{
+  "baseUrl": "http://localhost:3001",
+  "supportFile": "./cypress/support/index.ts",
+  "projectId": "danilovsky",
+  "ignoreTestFiles": "utils.ts",
+  "chromeWebSecurity": false,
+  "testFiles": "**.e2e.ts",
+  "env": {
+    "backUrl": "http://back.danilovsky.breadhead.ru"
+  }
+}

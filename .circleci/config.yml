@@ -1,0 +1,115 @@
+version: 2
+jobs:
+  e2e:
+    docker:
+      - image: cypress/base:10
+
+    working_directory: ~/repo
+    environment:
+      TZ: 'Europe/Moscow'
+
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - js-dependencies-{{ checksum "yarn.lock" }}
+      - run:
+          name: Install Dependencies
+          command: yarn
+      - save_cache:
+          key: js-dependencies-{{ checksum "yarn.lock" }}
+          paths:
+            - ./node_modules
+      - run:
+          name: E2E Tests
+          command: yarn test:cypress:ci
+  check-pr:
+    docker:
+      - image: circleci/node:8.12.0
+
+    working_directory: ~/repo
+    environment:
+      TZ: 'Europe/Moscow'
+
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - js-dependencies-{{ checksum "yarn.lock" }}
+      - run:
+          name: Install Dependencies
+          command: yarn
+      - save_cache:
+          key: js-dependencies-{{ checksum "yarn.lock" }}
+          paths:
+            - ./node_modules
+      - run:
+          name: Types, lint and unit test
+          command: yarn types && yarn lint && yarn test
+
+  push:
+    docker:
+      - image: docker:17.05.0-ce-git
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: Setup Env
+          command: |
+            echo 'export IMAGE_TAG=${CIRCLE_TAG:-latest}' >> $BASH_ENV
+            echo 'export IMAGE_NAME=danilovsky-web' >> $BASH_ENV
+      - run:
+          name: Build and push Docker image
+          command: |
+            source $BASH_ENV
+            docker build -t breadheadhub/$IMAGE_NAME:$IMAGE_TAG .
+            docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
+            docker push breadheadhub/$IMAGE_NAME:$IMAGE_TAG
+
+  dev:
+    machine:
+      enabled: true
+    steps:
+      - run:
+          name: Deploy Over SSH
+          command:
+            ssh $SSH_USER@$SSH_HOST "cd /home/cloud-user/www/danilovsky-web &&
+            sudo docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD" &&
+            sudo docker pull breadheadhub/danilovsky-web &&
+            sudo docker logout &&
+            sudo docker-compose down &&
+            sudo docker-compose up -d &&
+            sudo docker image prune -f &&
+            sudo docker-compose exec -d danilovsky yarn server:mock"
+
+workflows:
+  version: 2
+  check-pr:
+    jobs:
+      - check-pr:
+          filters:
+            branches:
+              ignore:
+                - master
+      - e2e:
+          filters:
+            branches:
+              ignore:
+                - master
+  deploy-dev:
+    jobs:
+      - push:
+          filters:
+            branches:
+              only:
+                - master
+      - dev:
+          filters:
+            branches:
+              only:
+                - master
+          requires:
+            - push

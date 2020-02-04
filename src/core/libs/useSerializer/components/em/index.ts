@@ -1,0 +1,1 @@
+export { SerializerEm } from './SerializerEm';
