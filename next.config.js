@@ -1,5 +1,4 @@
 const withPlugins = require('next-compose-plugins');
-const withCSS = require('@zeit/next-css');
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 });
@@ -8,12 +7,6 @@ const withSourceMaps = require('@zeit/next-source-maps')();
 
 module.exports = withPlugins(
   [
-    [
-      withCSS,
-      {
-        cssModules: true,
-      },
-    ],
     [withBundleAnalyzer],
     [
       withSourceMaps,
@@ -31,9 +24,7 @@ module.exports = withPlugins(
         siteUrl: process.env.SITE_URL || 'http://localhost:3001',
         storageUrl:
           process.env.STORAGE_URL || 'https://image.danilovsky.breadhead.ru',
-        authCode:
-          process.env.AUTH_CODE_SECRET ||
-          '09a165e1-10de-44c9-97b2-336847860e46',
+        authCode: process.env.AUTH_CODE_SECRET || '',
         cypress_backUrl:
           process.env.BACK_URL || 'http://back.danilovsky.breadhead.ru',
       },
@@ -52,7 +43,7 @@ module.exports = withPlugins(
 
         config.plugins.push(
           new BugsnagSourceMapUploaderPlugin({
-            apiKey: 'db4688dc1ac08c70cdcbb6fa2407f0a5',
+            apiKey: 'aaa',
             overwrite: true,
             releaseStage: 'production',
             publicPath: options.isServer ? '.next/server/' : '*/_next/',

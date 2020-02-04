@@ -5,7 +5,7 @@ import React from 'react';
 
 const bugsnagClient = bugsnag({
   // TODO: replace with env variable
-  apiKey: 'db4688dc1ac08c70cdcbb6fa2407f0a5',
+  apiKey: 'aaa',
 });
 bugsnagClient.use(bugsnagReact, React);
 

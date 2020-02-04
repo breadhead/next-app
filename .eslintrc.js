@@ -26,9 +26,7 @@ module.exports = {
     '@typescript-eslint/no-var-requires': 0,
     '@typescript-eslint/no-explicit-any': 0,
     '@typescript-eslint/explicit-function-return-type': 0,
-    '@typescript-eslint/no-parameter-properties': {
-      allows: ['public'],
-    },
+    '@typescript-eslint/no-parameter-properties': 0,
     '@typescript-eslint/explicit-member-accessibility': 0,
     '@typescript-eslint/no-use-before-define': 0,
     'react/display-name': 0,
