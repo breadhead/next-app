@@ -140,6 +140,7 @@
     "eslint-plugin-react-hooks": "^2.3.0",
     "husky": "^3.1.0",
     "jest": "^25.1.0",
+    "json-server": "^0.15.1",
     "lint-staged": "8.*",
     "next-transpile-modules": "^3.0.1",
     "nodemon": "^1.19.2",
