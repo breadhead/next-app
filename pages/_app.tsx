@@ -53,6 +53,9 @@ class NextApp extends (App as any) {
     };
   }
 
+  componentDidMount() {
+    this.store.data.fetchData();
+  }
   private readonly store: SelfRootStore;
 
   constructor(props: any) {

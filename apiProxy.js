@@ -1,5 +1,5 @@
 const sanityClient = require('@sanity/client')({
-  projectId: 'murfvh8v',
+  projectId: 'd9oybh7m',
   dataset: 'production',
   token: '',
   useCdn: true, // `false` if you want to ensure fresh data

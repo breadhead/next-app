@@ -25,8 +25,6 @@ module.exports = withPlugins(
         storageUrl:
           process.env.STORAGE_URL || 'https://image.danilovsky.breadhead.ru',
         authCode: process.env.AUTH_CODE_SECRET || '',
-        cypress_backUrl:
-          process.env.BACK_URL || 'http://back.danilovsky.breadhead.ru',
       },
     },
   ],

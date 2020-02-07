@@ -25,6 +25,7 @@ export const Link = ({
   download,
   isCustomLink,
   className,
+  as,
   ...rest
 }: LinkPrimitiveProps) => {
   return !isNextLink ? (
@@ -39,7 +40,7 @@ export const Link = ({
       {children}
     </StyledLink>
   ) : (
-    <NextLink {...rest} href={href}>
+    <NextLink {...rest} href={href} as={as || href}>
       {isCustomLink ? (
         children
       ) : (
