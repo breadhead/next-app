@@ -12,15 +12,15 @@ export const EventModel = SanityDefaultModel.props({
   title: LocaleStringModel,
   subtitle: types.maybe(LocaleStringModel),
   code: SlugModel,
-  image: types.maybe(PhotoModel),
+  image: types.array(PhotoModel),
   description: LocalePostModel,
   date: types.model({
-    dateFrom: types.Date,
-    dateTo: types.maybe(types.Date),
+    dateFrom: types.string,
+    dateTo: types.maybe(types.string),
     timeFrom: types.maybe(types.string),
     timeTo: types.maybe(types.string),
   }),
   cafe: types.maybe(types.array(RefModel)),
 });
 
-export interface Event extends Instance<typeof EventModel> {}
+export interface EventType extends Instance<typeof EventModel> {}

@@ -12,9 +12,9 @@ export const NewsModel = SanityDefaultModel.props({
   title: LocaleStringModel,
   subtitle: types.maybe(LocaleStringModel),
   code: SlugModel,
-  image: types.maybe(PhotoModel),
+  image: types.array(PhotoModel),
   description: LocalePostModel,
-  date: types.Date,
+  date: types.string,
   cafe: types.maybe(types.array(RefModel)),
 });
 

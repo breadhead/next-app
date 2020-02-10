@@ -2,12 +2,12 @@ import { Instance, SnapshotIn, SnapshotOut, types } from 'mobx-state-tree';
 
 import { ModalStore } from '../modal/Modal';
 import { PageMetaStore } from '../pageMeta';
-import { DataStore } from '../data';
+import { DataStoreModel } from '../data';
 
 export const RootStore = types.model('root', {
   modal: ModalStore,
   pageMeta: PageMetaStore,
-  data: DataStore,
+  data: DataStoreModel,
 });
 
 export interface SelfRootStore extends Instance<typeof RootStore> {}

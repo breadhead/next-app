@@ -1,8 +1,9 @@
 import { types } from 'mobx-state-tree';
 
-const RefModel = types.model({ _ref: types.string });
+import { RefModel } from './RefModel';
 
 export const PhotoModel = types.model({
-  _type: types.maybe(types.string),
-  asset: types.maybe(RefModel),
+  _key: types.string,
+  _type: types.string,
+  asset: RefModel,
 });

@@ -1,1 +1,1 @@
-export const dataInitialState = { _data: null };
+export const dataInitialState = {};

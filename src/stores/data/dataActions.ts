@@ -1,12 +1,13 @@
 import { flow } from 'mobx-state-tree';
+import { groupBy } from 'lodash-es';
 
 import { getFromConfig } from '@app/core/libs/getPublicRuntimeConfig';
 import { apiErrorHandler } from '@app/service/api/helper';
 import { getApiService } from '@app/stores/root/helpers/getEnv';
 
-import { SelfDataStore } from '.';
+import { DataStoreType } from '.';
 
-const fetchData = (self: SelfDataStore): any =>
+const fetchData = (self: DataStoreType): any =>
   flow(function* fetch() {
     try {
       const data = yield getApiService(self).request(
@@ -15,10 +16,10 @@ const fetchData = (self: SelfDataStore): any =>
           'siteUrl',
         )}/api/query/*[_type in ["mainPageLanding", "newsLanding", "eventLanding"]]`,
       );
-      console.log('TCL: flow -> data', data);
-
-      debugger;
+      const groupedBy = groupBy(data, '_type');
+      self._data = groupedBy as any;
     } catch (error) {
+      console.log('TCL: flow -> error', error);
       return apiErrorHandler(error);
     }
   });
