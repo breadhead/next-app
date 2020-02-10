@@ -1,19 +1,19 @@
-import * as React from 'react';
 import NextLink, { LinkProps } from 'next/link';
-import { ReactChild, ReactFragment } from 'react';
+import * as React from 'react';
 
 import { StyledLink } from './styled';
 
 export type LinkType = React.FunctionComponent<LinkPrimitiveProps>;
 
-interface LinkPrimitiveProps extends LinkProps {
-  children?: ReactChild | ReactFragment;
+interface LinkPrimitiveProps extends Omit<LinkProps, 'href'> {
+  children?: React.ReactNode;
   target?: '_blank' | '_self' | '_parent' | '_top';
   isNextLink?: boolean;
   isCustomLink?: boolean;
   download?: boolean;
   onClick?: (event?: any) => void;
   className?: string;
+  href?: string;
 }
 
 export const Link = ({
@@ -40,7 +40,7 @@ export const Link = ({
       {children}
     </StyledLink>
   ) : (
-    <NextLink {...rest} href={href} as={as || href}>
+    <NextLink {...rest} href={href as any} as={as || href}>
       {isCustomLink ? (
         children
       ) : (

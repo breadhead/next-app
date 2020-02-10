@@ -94,11 +94,6 @@ workflows:
             branches:
               ignore:
                 - master
-      - e2e:
-          filters:
-            branches:
-              ignore:
-                - master
   deploy-dev:
     jobs:
       - push:

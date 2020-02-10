@@ -1,7 +1,9 @@
-html body {
-  --content-top-offset: 16px;
-  --content-bottom-offset: 40px;
-  --content-side-offset: 12px;
+:root {
+  --color-text: #190000;
+}
+
+body {
+  color: var(--color-text);
 }
 
 *,
