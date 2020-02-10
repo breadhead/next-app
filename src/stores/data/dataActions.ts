@@ -14,9 +14,11 @@ const fetchData = (self: DataStoreType): any =>
         'get',
         `${getFromConfig(
           'siteUrl',
-        )}/api/query/*[_type in ["mainPageLanding", "newsLanding", "eventLanding"]]`,
+        )}/api/query/*[_type in ["mainPageLanding", "newsLanding", "eventLanding"]]{..., 'cafes': cafes[] -> {...},
+  'shops': shops[] -> {...}}`,
       );
       const groupedBy = groupBy(data, '_type');
+      console.log('TCL: groupedBy', groupedBy);
       self._data = groupedBy as any;
     } catch (error) {
       console.log('TCL: flow -> error', error);

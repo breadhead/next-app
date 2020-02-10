@@ -1,12 +1,12 @@
-import { types, Instance } from 'mobx-state-tree';
-import { LinkProps } from 'next/link';
+import { Instance, types } from 'mobx-state-tree';
 
-import { ShortCategoryModel } from '@app/types/Category';
 import { ProductModel } from '@app/types/Product';
-import { GetImageType } from '@app/core/helpers/get-image';
 
 import { ProductSortBy, ProductSortOrder } from './/ProductSort';
-import { ImageModel } from './Primitives';
+import { LocalePostModel } from './sanity/LocalePostModel';
+import { LocaleStringModel } from './sanity/LocaleStringModel';
+import { PhotoModel } from './sanity/PhotoModel';
+import { SanityDefaultModel } from './sanity/SanityDefaultModel';
 
 export enum ShopTypes {
   SHOP = 'shop',
@@ -29,33 +29,17 @@ export const ShopQueryModel = types.model({
   type: types.maybeNull(types.string),
 });
 
-export const ShopModel = types.model({
-  name: types.string,
-  description: types.frozen(),
-  code: types.string,
-  type: types.enumeration(Object.values(ShopTypes)),
-  address: types.maybeNull(types.string),
-  businessHours: types.maybeNull(types.string),
-  businessDays: types.maybeNull(types.string),
-  logo: ImageModel,
-  images: types.array(ImageModel),
-  totalItems: types.number,
-  categories: types.array(ShortCategoryModel),
+export const ShopModel = SanityDefaultModel.props({
+  status: types.boolean,
+  delivery: types.maybe(types.boolean),
+  name: LocaleStringModel,
+  subtitle: types.maybe(LocaleStringModel),
+  food_images: types.maybe(types.array(PhotoModel)),
+  code: types.model({ current: types.string }),
+  description: types.maybe(LocalePostModel),
+  logo: types.maybe(PhotoModel),
+  address: types.maybe(types.string),
 });
 
-export const ShopDetailModel = types.model({
-  entity: types.maybeNull(ShopModel),
-  products: ShopProductsModel,
-  query: ShopQueryModel,
-});
-
-export interface CardShop {
-  id: string | number;
-  name: string;
-  logo: GetImageType;
-  image: GetImageType;
-  link: LinkProps;
-}
 export interface Shop extends Instance<typeof ShopModel> {}
-export interface ShopDetail extends Instance<typeof ShopDetailModel> {}
 export interface ShopProducts extends Instance<typeof ShopProductsModel> {}
