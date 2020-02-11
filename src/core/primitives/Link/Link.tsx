@@ -25,6 +25,7 @@ export const Link = ({
   download,
   isCustomLink,
   className,
+  passHref,
   as,
   ...rest
 }: LinkPrimitiveProps) => {
@@ -35,12 +36,13 @@ export const Link = ({
       download={download}
       rel="noopener noreferrer"
       onClick={onClick}
+      className={className}
       {...rest}
     >
       {children}
     </StyledLink>
   ) : (
-    <NextLink {...rest} href={href as any} as={as || href}>
+    <NextLink {...rest} passHref={passHref} href={href as any} as={as || href}>
       {isCustomLink ? (
         children
       ) : (

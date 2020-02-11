@@ -20,7 +20,10 @@ module.exports = withPlugins(
       publicRuntimeConfig: {
         isDev: process.env.NODE_ENV !== 'production',
         testing: process.env.TESTING,
-        backUrl: process.env.BACK_URL || 'http://back.danilovsky.breadhead.ru',
+        deliveryUrl:
+          process.env.DELIVERY_URL || 'https://danilovsky.stage.breadhead.ru',
+        backUrl:
+          process.env.BACK_URL || 'http://back.danilovsky.stage.breadhead.ru',
         siteUrl: process.env.SITE_URL || 'http://localhost:3001',
         storageUrl:
           process.env.STORAGE_URL || 'https://image.danilovsky.breadhead.ru',

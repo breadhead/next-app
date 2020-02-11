@@ -3,11 +3,15 @@
   font-style: normal;
   font-display: block;
   font-weight: 200;
-  src:url("/static/fonts/862185/bb50198c-6155-4115-a1af-08b7b712a439.eot?#iefix");
-  src:url("/static/fonts/862185/bb50198c-6155-4115-a1af-08b7b712a439.eot?#iefix") format("eot"),
-      url("/static/fonts/862185/bf4149c4-43b8-466f-89b0-babe3007d94b.woff2") format("woff2"),
-      url("/static/fonts/862185/f540df91-79a5-4ffa-a92c-9e825795067c.woff") format("woff"),
-      url("/static/fonts/862185/a73f9b80-fffc-4fae-9665-67e9b05a3729.ttf") format("truetype");
+  src: url('/static/fonts/862185/bb50198c-6155-4115-a1af-08b7b712a439.eot?#iefix');
+  src: url('/static/fonts/862185/bb50198c-6155-4115-a1af-08b7b712a439.eot?#iefix')
+      format('eot'),
+    url('/static/fonts/862185/bf4149c4-43b8-466f-89b0-babe3007d94b.woff2')
+      format('woff2'),
+    url('/static/fonts/862185/f540df91-79a5-4ffa-a92c-9e825795067c.woff')
+      format('woff'),
+    url('/static/fonts/862185/a73f9b80-fffc-4fae-9665-67e9b05a3729.ttf')
+      format('truetype');
 }
 
 @font-face {
@@ -15,11 +19,15 @@
   font-style: normal;
   font-display: block;
   font-weight: 400;
-  src:url("/static/fonts/2964077/3f8b2879-5113-442c-af64-a1d60af2c757.eot?#iefix");
-  src:url("/static/fonts/2964077/3f8b2879-5113-442c-af64-a1d60af2c757.eot?#iefix") format("eot"),
-      url("/static/fonts/2964077/4939b1ba-c709-41f5-89fb-06de5c417ae0.woff2") format("woff2"),
-      url("/static/fonts/2964077/849288c7-6532-42b9-ad48-8ea7ae3ffdc6.woff") format("woff"),
-      url("/static/fonts/2964077/8cf9e0fa-7cd1-49f9-aff3-9aa88cd6da68.ttf") format("truetype");
+  src: url('/static/fonts/2964077/3f8b2879-5113-442c-af64-a1d60af2c757.eot?#iefix');
+  src: url('/static/fonts/2964077/3f8b2879-5113-442c-af64-a1d60af2c757.eot?#iefix')
+      format('eot'),
+    url('/static/fonts/2964077/4939b1ba-c709-41f5-89fb-06de5c417ae0.woff2')
+      format('woff2'),
+    url('/static/fonts/2964077/849288c7-6532-42b9-ad48-8ea7ae3ffdc6.woff')
+      format('woff'),
+    url('/static/fonts/2964077/8cf9e0fa-7cd1-49f9-aff3-9aa88cd6da68.ttf')
+      format('truetype');
 }
 
 @font-face {
@@ -27,15 +35,23 @@
   font-style: normal;
   font-display: block;
   font-weight: 500;
-  src:url("/static/fonts/2964065/77e12df4-4863-4f1b-a659-8ded680d26be.eot?#iefix");
-  src:url("/static/fonts/2964065/77e12df4-4863-4f1b-a659-8ded680d26be.eot?#iefix") format("eot"),
-      url("/static/fonts/2964065/c1e26b3a-e3dd-47a2-8ee9-99267174e7da.woff2") format("woff2"),
-      url("/static/fonts/2964065/5ce0b877-3904-4200-977a-aa98a47caefa.woff") format("woff"),
-      url("/static/fonts/2964065/aecdc8a3-fee5-444c-922e-daf1c944bcec.ttf") format("truetype");
+  src: url('/static/fonts/2964065/77e12df4-4863-4f1b-a659-8ded680d26be.eot?#iefix');
+  src: url('/static/fonts/2964065/77e12df4-4863-4f1b-a659-8ded680d26be.eot?#iefix')
+      format('eot'),
+    url('/static/fonts/2964065/c1e26b3a-e3dd-47a2-8ee9-99267174e7da.woff2')
+      format('woff2'),
+    url('/static/fonts/2964065/5ce0b877-3904-4200-977a-aa98a47caefa.woff')
+      format('woff'),
+    url('/static/fonts/2964065/aecdc8a3-fee5-444c-922e-daf1c944bcec.ttf')
+      format('truetype');
 }
 
-html body * {
-  font-family: AvantGardeGothicITC, -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji',
-    'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+:root {
+  --font: AvantGardeGothicITC, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol', sans-serif;
+}
+
+html * {
+  font-family: var(--font);
 }

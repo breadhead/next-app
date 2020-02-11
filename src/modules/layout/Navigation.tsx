@@ -9,7 +9,7 @@ export const Navigation = () => {
   const { t } = useTranslation();
 
   return (
-    <NavList>
+    <NavList className="reset-last-bottom-margin">
       <NavListItem>
         <NavListLink href={ROUTER.events} isNextLink passHref>
           <a>{t('nav.events')}</a>
@@ -49,6 +49,20 @@ export const Navigation = () => {
   );
 };
 
-const NavList = styled.ul``;
-const NavListItem = styled.li``;
-const NavListLink = styled(Link)``;
+const NavList = styled.ul`
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-bottom: 44px;
+  font-size: 20px;
+  line-height: 28px;
+  display: grid;
+  grid-row-gap: 12px;
+`;
+const NavListItem = styled.li`
+  text-transform: uppercase;
+`;
+const NavListLink = styled(Link)`
+  cursor: pointer;
+  width: 100%;
+  display: block;
+`;

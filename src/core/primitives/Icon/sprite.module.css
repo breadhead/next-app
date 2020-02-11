@@ -1,3 +1,8 @@
+.svg-icons--arrow-default-dims {
+  width: 40px;
+  height: 40px;
+}
+
 .svg-icons--fb-dims {
   width: 32px;
   height: 32px;
@@ -6,6 +11,11 @@
 .svg-icons--instagram-dims {
   width: 32px;
   height: 32px;
+}
+
+.svg-icons--logo-header-dims {
+  width: 256px;
+  height: 256px;
 }
 
 .svg-icons--vk-dims {

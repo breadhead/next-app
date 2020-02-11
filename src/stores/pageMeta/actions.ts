@@ -13,7 +13,6 @@ export const loadPageMeta = (self: SelfPageMetaStore) =>
         'GET',
         '/pageMeta',
       );
-
       self._entities = pageMeta;
     } catch (err) {
       console.log(err);

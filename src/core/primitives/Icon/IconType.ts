@@ -1,1 +1,6 @@
-export type IconType = 'icons--fb' | 'icons--instagram' | 'icons--vk';
+export type IconType =
+  | 'icons--arrow-default'
+  | 'icons--fb'
+  | 'icons--instagram'
+  | 'icons--logo-header'
+  | 'icons--vk';
