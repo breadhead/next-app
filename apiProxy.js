@@ -1,14 +1,10 @@
-const sanityClient = require('@sanity/client')({
-  projectId: 'd9oybh7m',
-  dataset: 'production',
-  token: '',
-  useCdn: true, // `false` if you want to ensure fresh data
-});
 const redisClient = require('redis').createClient({
   host: process.env.REDIS_HOST || 'localhost',
   port: process.env.REDIS_PORT || 6379,
 });
 const { promisify } = require('util');
+
+const { sanityClient } = require('./src/core/libs/sanity-client');
 const getFromRedis = promisify(redisClient.get).bind(redisClient);
 
 module.exports = function(req, res) {

@@ -43,7 +43,10 @@ class NextApp extends (App as any) {
       }
     }
 
-    await Promise.all([ctx.store.pageMeta.loadPageMeta()]);
+    await Promise.all([
+      // ctx.store.pageMeta.loadPageMeta(),
+      ctx.store.data.fetchData(),
+    ]);
 
     return {
       initialState: getSnapshot(store),
@@ -53,10 +56,9 @@ class NextApp extends (App as any) {
     };
   }
 
-  componentDidMount() {
-    this.store.data.fetchData();
-  }
   private readonly store: SelfRootStore;
+
+  componentDidMount() {}
 
   constructor(props: any) {
     super(props);

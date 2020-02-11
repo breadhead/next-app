@@ -26,7 +26,8 @@ module.exports = withPlugins(
           process.env.BACK_URL || 'http://back.danilovsky.stage.breadhead.ru',
         siteUrl: process.env.SITE_URL || 'http://localhost:3001',
         storageUrl:
-          process.env.STORAGE_URL || 'https://image.danilovsky.breadhead.ru',
+          process.env.STORAGE_URL ||
+          'https://image.danilovsky.stage.breadhead.ru',
         authCode: process.env.AUTH_CODE_SECRET || '',
       },
     },

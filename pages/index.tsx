@@ -1,11 +1,10 @@
 import React from 'react';
 
-import { TranslateDict, useTranslation } from '@app/core/libs/WithTranslate';
+import { TranslateDict } from '@app/core/libs/WithTranslate';
+import { MainPage } from '@app/modules/main-page';
 
 const Index = () => {
-  const { t } = useTranslation();
-
-  return <div>sdds</div>;
+  return <MainPage />;
 };
 
 Index.getInitialProps = async () => {

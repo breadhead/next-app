@@ -66,8 +66,8 @@ export const ResponsivePicture = ({
 }: ResponsivePictureProps) => {
   return (
     <Picture className={className}>
-      <source media="(min-width: 768px)" srcSet={getImageUrl(src, 'desktop')} />
-      <Image src={getImageUrl(src, 'mobile')} {...rest} />
+      <source media="(min-width: 768px)" srcSet={src} />
+      <Image src={src} {...rest} />
     </Picture>
   );
 };

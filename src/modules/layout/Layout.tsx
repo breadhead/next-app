@@ -35,6 +35,7 @@ export const Layout = React.memo(({ children }: LayoutProps) => {
             <Icon icon="icons--arrow-default" />
           </DeliveryLink>
           <Schedule>
+            {/* TODO: treat time properly */}
             <Time>8:00 – 21:00</Time>
             <NowOpen>{t('nav.nowOpen')}</NowOpen>
           </Schedule>
@@ -68,9 +69,15 @@ const Aside = styled.aside`
   overflow-y: scroll;
   height: 100%;
   border-right: 1px solid var(--color-text);
+
+  @media (max-width: 1280px) {
+    display: none;
+  }
 `;
 
-const Header = styled.header``;
+const Header = styled.header`
+  height: 96px;
+`;
 const Footer = styled.footer``;
 
 const DeliveryLink = styled(Link)`

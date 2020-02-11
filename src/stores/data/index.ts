@@ -5,7 +5,8 @@ import { EventModel } from '@app/types/Events';
 import { MainPageResponseModel } from '@app/types/MainPageResponse';
 import { NewsModel } from '@app/types/News';
 
-import { DataActions } from './dataActions';
+import { dataActions } from './dataActions';
+import { dataViews } from './dataViews';
 
 export const DataStoreModel = types
   .model({
@@ -17,6 +18,8 @@ export const DataStoreModel = types
       }),
     ),
   })
-  .actions(DataActions);
+  .views(dataViews)
+  .actions(dataActions);
 
 export interface DataStoreType extends Instance<typeof DataStoreModel> {}
+export type DataStoreTypeNonNullable = NonNullable<DataStoreType['_data']>;
