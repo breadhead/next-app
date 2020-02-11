@@ -18,8 +18,8 @@ import { SelfRootStore } from '@app/stores/root/Root';
 import { MobxAppContextType } from '@app/stores/root/types/Context';
 import bugsnagClient from '@app/core/libs/bugsnag/bugsnag';
 import { BugsnagError } from '@app/modules/error/BugsnagError';
-import '@app/core/components/use-modal/ModalContainer/ModalContainer.css';
 
+import '@app/core/components/use-modal/ModalContainer/ModalContainer.css';
 import ErrorPage from './_error';
 
 const { appWithTranslation } = require('@app/core/libs/i18n');

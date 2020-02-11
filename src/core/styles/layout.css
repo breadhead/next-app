@@ -48,3 +48,16 @@ input[type='number']::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+use.ic-1 {
+  fill: skyblue;
+}
+use.ic-2 {
+  fill: #fdc646;
+}
+use.ic-3 {
+  fill: #ff2d49;
+}
+
+path {
+  /* fill: red; */
+}

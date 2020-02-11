@@ -1,0 +1,9 @@
+{
+  "svg": {
+    "xmlDeclaration": false
+  },
+  "dest": "svg-sprite-out",
+  "mode": {
+    "symbol": true
+  }
+}

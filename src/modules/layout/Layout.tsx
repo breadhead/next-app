@@ -2,7 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { Link } from '@app/core/primitives';
-import { useTranslation } from '@app/core/libs/WithTranslate';
+import { Icon } from '@app/core/primitives/Icon/Icon';
+import { Sprite } from '@app/core/primitives/Icon/Sprite';
 
 import { Navigation } from './Navigation';
 
@@ -13,33 +14,44 @@ interface LayoutProps {
 
 export const Layout = React.memo(({ children }: LayoutProps) => {
   return (
-    <Main>
-      <Aside>
-        <div className="logo"></div>
-        <Navigation></Navigation>
-        <Socials>
-          <SoclialItem>
-            <SocialLink>insta</SocialLink>
-          </SoclialItem>
-          <SoclialItem>
-            <SocialLink>fb</SocialLink>
-          </SoclialItem>
-          <SoclialItem>
-            <SocialLink>vk</SocialLink>
-          </SoclialItem>
-        </Socials>
-        <DeliveryLink></DeliveryLink>
-        <Schedule>
-          <Time>8-21</Time>
-          <NowOpen></NowOpen>
-        </Schedule>
-      </Aside>
-      <Header>Даниловский рынок</Header>
-      {children}
-      <Footer>Даниловский рынок футер</Footer>
-    </Main>
+    <>
+      <Sprite />
+      <Main>
+        <Aside>
+          <div className="logo"></div>
+          <Navigation></Navigation>
+          <Socials>
+            <SoclialItem>
+              <SocialLink>
+                <StyledIcon icon="icons--instagram" />
+                <StyledIcon icon="icons--fb" />
+                <StyledIcon icon="icons--vk" />
+              </SocialLink>
+            </SoclialItem>
+            <SoclialItem>
+              <SocialLink>fb</SocialLink>
+            </SoclialItem>
+            <SoclialItem>
+              <SocialLink>vk</SocialLink>
+            </SoclialItem>
+          </Socials>
+          <DeliveryLink></DeliveryLink>
+          <Schedule>
+            <Time>8-21</Time>
+            <NowOpen></NowOpen>
+          </Schedule>
+        </Aside>
+        <Header>Даниловский рынок</Header>
+        {children}
+        <Footer>Даниловский рынок футер</Footer>
+      </Main>
+    </>
   );
 });
+
+const StyledIcon = styled(Icon)`
+  fill: blue !important;
+`;
 
 const Main = styled.main`
   padding-left: 256px;
