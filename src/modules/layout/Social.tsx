@@ -3,38 +3,34 @@ import styled from 'styled-components';
 
 import { Link } from '@app/core/primitives';
 import { Icon } from '@app/core/primitives/Icon/Icon';
+import { IconType } from '@app/core/primitives/Icon/IconType';
+
+const socialLinks = [
+  {
+    href: 'https://www.facebook.com/danrinok/',
+    icon: 'icons--fb',
+  },
+  {
+    href: 'https://vk.com/danrinok',
+    icon: 'icons--vk',
+  },
+  {
+    href: 'https://www.instagram.com/danilovskymarket/',
+    icon: 'icons--instagram',
+  },
+];
 
 export const Social = () => (
   <Socials>
-    <SoclialItem>
-      <SocialLink
-        target="_blank"
-        href="https://www.facebook.com/danrinok/"
-        passHref
-      >
-        <a>
-          <SocialIcon icon="icons--fb" />
-        </a>
-      </SocialLink>
-    </SoclialItem>
-    <SoclialItem>
-      <SocialLink target="_blank" href="https://vk.com/danrinok" passHref>
-        <a>
-          <SocialIcon icon="icons--vk" />
-        </a>
-      </SocialLink>
-    </SoclialItem>
-    <SoclialItem>
-      <SocialLink
-        target="_blank"
-        href="https://www.instagram.com/danilovskymarket/"
-        passHref
-      >
-        <a>
-          <SocialIcon icon="icons--instagram" />
-        </a>
-      </SocialLink>
-    </SoclialItem>
+    {socialLinks.map(link => (
+      <SoclialItem key={link.href}>
+        <SocialLink target="_blank" href={link.href} passHref>
+          <a>
+            <SocialIcon icon={link.icon as IconType} />
+          </a>
+        </SocialLink>
+      </SoclialItem>
+    ))}
   </Socials>
 );
 

@@ -5,46 +5,49 @@ import { useTranslation } from '@app/core/libs/WithTranslate';
 import { ROUTER } from '@app/core/router';
 import { Link } from '@app/core/primitives';
 
+const navigationLinks = [
+  {
+    text: 'nav.events',
+    href: ROUTER.events,
+  },
+  {
+    text: 'nav.shops',
+    href: ROUTER.shops,
+  },
+  {
+    text: 'nav.cafe',
+    href: ROUTER.cafe,
+  },
+  {
+    text: 'nav.about',
+    href: ROUTER.about,
+  },
+  {
+    text: 'nav.vintage',
+    href: ROUTER.vintage,
+  },
+  {
+    text: 'nav.visitors',
+    href: ROUTER.visitors,
+  },
+  {
+    text: 'nav.contacts',
+    href: ROUTER.contacts,
+  },
+];
+
 export const Navigation = () => {
   const { t } = useTranslation();
 
   return (
     <NavList className="reset-last-bottom-margin">
-      <NavListItem>
-        <NavListLink href={ROUTER.events} isNextLink passHref>
-          <a>{t('nav.events')}</a>
-        </NavListLink>
-      </NavListItem>
-      <NavListItem>
-        <NavListLink href={ROUTER.shops} isNextLink passHref>
-          <a>{t('nav.shops')}</a>
-        </NavListLink>
-      </NavListItem>
-      <NavListItem>
-        <NavListLink href={ROUTER.cafe} isNextLink passHref>
-          <a>{t('nav.cafe')}</a>
-        </NavListLink>
-      </NavListItem>
-      <NavListItem>
-        <NavListLink href={ROUTER.about} isNextLink passHref>
-          <a>{t('nav.about')}</a>
-        </NavListLink>
-      </NavListItem>
-      <NavListItem>
-        <NavListLink href={ROUTER.vintage} isNextLink passHref>
-          <a>{t('nav.vintage')}</a>
-        </NavListLink>
-      </NavListItem>
-      <NavListItem>
-        <NavListLink href={ROUTER.visitors} isNextLink passHref>
-          <a>{t('nav.visitors')}</a>
-        </NavListLink>
-      </NavListItem>
-      <NavListItem>
-        <NavListLink href={ROUTER.contacts} isNextLink passHref>
-          <a>{t('nav.contacts')}</a>
-        </NavListLink>
-      </NavListItem>
+      {navigationLinks.map(link => (
+        <NavListItem key={link.href}>
+          <NavListLink href={link.href} isNextLink passHref>
+            <a>{t(link.text)}</a>
+          </NavListLink>
+        </NavListItem>
+      ))}
     </NavList>
   );
 };
