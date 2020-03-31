@@ -121,7 +121,7 @@
     "@types/react-modal": "^3.8.3",
     "@types/recompose": "^0.30.7",
     "@types/styled-components": "^4.4.2",
-    "@types/testing-library__cypress": "^5.0.1",
+    "@types/testing-library__cypress": "^5.0.4",
     "@typescript-eslint/eslint-plugin": "1.x",
     "@typescript-eslint/parser": "1.x",
     "@zeit/next-source-maps": "^0.0.3",
