@@ -55,7 +55,7 @@
     "@types/lodash-es": "^4.17.3",
     "@zeit/next-css": "^1.0.1",
     "args-parser": "^1.1.0",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "base-64": "^0.1.0",
     "classnames": "^2.2.6",
     "cookie-parser": "^1.4.4",
