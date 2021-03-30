@@ -90,7 +90,7 @@
     "redis": "^2.8.0",
     "reset-css": "^4.0.1",
     "resize-observer-polyfill": "^1.5.1",
-    "styled-components": "^5.0.0",
+    "styled-components": "^5.2.2",
     "use-key-hook": "^1.5.0",
     "utility-types": "^3.7.0",
     "webpack-log": "^3.0.1"
