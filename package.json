@@ -147,7 +147,7 @@
     "lint-staged": "8.*",
     "next-transpile-modules": "^3.0.1",
     "nodemon": "^1.19.2",
-    "postcss": "^7.0.18",
+    "postcss": "^8.2.10",
     "postcss-normalize": "^7.0.1",
     "postcss-preset-env": "^6.4.0",
     "prettier": "^1.19.1",
